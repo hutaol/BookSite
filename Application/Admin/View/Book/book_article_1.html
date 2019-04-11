@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://novel.818tu.com/backend/wx_article_editor?aid=19778 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>参考文案</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="__PUBLIC__/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/toastr.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/admin/js/jquery.js"></script>
+    <script src="__PUBLIC__/admin/js/lodash.min.js"></script>
+    <script src="__PUBLIC__/admin/js/toastr.min.js"></script>
+    <script src="__PUBLIC__/admin/js/handlebars.min.js"></script>
+    <script src="__PUBLIC__/admin/js/knockout-min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="__PUBLIC__/admin/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/admin/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/ZeroClipboard.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery-2.0.3.min.js"></script>
+    <script>
+        toastr.options.positionClass = 'toast-bottom-right';
+    </script>
+    <script src="__PUBLIC__/admin/js/admin.js"></script>
+
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/page_mp_article.css">
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/page_mp_article_improve_combo.css">
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/admin.css">
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/xx.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/glyphicons-halflings-regular.css">
+    <script src="__PUBLIC__/admin/js/K.js"></script>
+    <!--[if lte IE 8]>
+    <script src="https://novel.818tu.com/static/assets/js/html5shiv.min.js"></script>
+    <script src="https://novel.818tu.com/static/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        #editor-bar .dropdown-menu {
+            height: auto;
+            max-height: 400px;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="rich_media"  >
+        <div class="rich_media_inner" style="padding-top:0">
+            <div class="rich_media_area_primary" >
+                <h1 id="wx-article-title" class="rich_media_title">清华大学教授吴维库演讲：情商与影响力</h1>
+                <div class="rich_media_content">
+                    <div id="wx-article-content">
+                    <div id="content_body">
+                        <div id="wx-article-cover"><img style="width:100%;display:block;margin-bottom:20px;" src="__PUBLIC__/admin/images/QQ20170325-0.jpg" id="showimg"></div>
+                        <volist name="bookinfos" id="vs">
+                            <div id="wx-article-body">
+                                <section style=" margin-top: 10px; margin-bottom: 10px; font-size: 24px;  box-sizing: border-box; ;transform: translate3d(0px, 0px, 0px);-webkit-transform: translate3d(0px, 0px, 0px);-moz-transform: translate3d(0px, 0px, 0px);-o-transform: translate3d(0px, 0px, 0px);"><section style="display: inline-block; vertical-align: middle; box-sizing: border-box;"><section style="width: 1.5em; height: 3em; line-height: 3em; border-top-right-radius: 2em; border-bottom-right-radius: 2em; background-color: rgb(253, 190, 173); text-align: center; color: rgb(255, 255, 255); font-size: 18px; box-sizing: border-box;"><section style="box-sizing: border-box;" class="autonum" title="">{$vs.number}</section></section><img style="box-sizing: border-box; float: left; margin-top: -3em; text-align: start; vertical-align: middle; width: 1.5em !important; height: auto !important; visibility: visible !important;" src="__PUBLIC__/admin/images/body7-title-bg.png"></section><section style="display: inline-block; vertical-align: middle; padding-left: 10px; font-size: 18px; color: rgb(44, 39, 39); box-sizing: border-box;"><section style="box-sizing: border-box;"><span style="color: #595959;"><strong style="box-sizing: border-box;"><span style="box-sizing: border-box; background-color: #FEFFFF;" class="135brush">{$vs.title2}
+                                </span></strong></span></section></section>
+                                </section>
+                                <section style="padding: 1.5em;
+                                    margin: 10px auto;
+                                    background: #fff;
+                                    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+                                    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+                                    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;">
+                                        {$vs.content}
+                                </section>
+                                <span>&nbsp;</span>
+
+                                <span>&nbsp;</span>
+                            </div>
+                        </volist>
+                        <!-- <div style="display:none;" id="copycontent">
+                            <volist name="bookinfos" id="vs">
+                                第{$vs.number}章 {$vs.title2}
+                                {$vs.content}
+                            </volist>
+                        </div> -->
+                        <div id="wx-article-footer">
+                            <img src="__PUBLIC__/admin/images/1.jpg" alt="" id="showfimg">
+                        </div>
+                    </div>
+                        <section style="padding: 1.5em;
+                            margin: 10px auto;
+                            background: #fff;
+                            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+                            -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+                            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;">
+                                阅读原文URL：<a id="copyurl">{$url}</a><br>
+                                 阅读原文URL：<a>{$durl}</a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="editor-bar" class="navbar navbar-default navbar-fixed-bottom" >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#editor-menu" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="editor-menu" >
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a    href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded=""><i class="fa fa-header"></i> 文案标题 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!-- ko foreach: titles -->
+                            <li><a    href="#" data-bind="男人怎么吻你?,就怎么爱你!估计很少人知道......" class="changet">男人怎么吻你?,就怎么爱你!估计很少人知道......</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="这是我见过最牛逼的女人！看了没人不服！">这是我见过最牛逼的女人！看了没人不服！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="女人最易让男人朝思暮想的特点，你有吗？">女人最易让男人朝思暮想的特点，你有吗？</a></li>
+
+                            <li><a    href="#" data-bind="温柔体贴的老公突然提出了离婚，只因为七年前我……">温柔体贴的老公突然提出了离婚，只因为七年前我……</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="男人的心在哪，钱就会花在哪！">男人的心在哪，钱就会花在哪！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="女人最易让男人朝思暮想的特点，你有吗？">女人最易让男人朝思暮想的特点，你有吗？</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="温柔体贴的老公突然提出了离婚，只因为七年前我……">温柔体贴的老公突然提出了离婚，只因为七年前我……</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="男人出轨,不是为了爱,而是因为…">男人出轨,不是为了爱,而是因为…</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="有一种陪伴不在身边，却在心间~">有一种陪伴不在身边，却在心间~</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="你以为嫁了个没钱的男人，他就一定会对你好？">你以为嫁了个没钱的男人，他就一定会对你好？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="机关算尽，假装贞洁，欲擒故纵……">机关算尽，假装贞洁，欲擒故纵……</a></li>
+
+                            <li><a    href="#" data-bind="妻子去世后，丈夫对孩子说了这样的话，看哭了">妻子去世后，丈夫对孩子说了这样的话，看哭了</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="她为救他怀了别人的孩子，被他全家看不起，结局令人唏嘘......">她为救他怀了别人的孩子，被他全家看不起，结局令人唏嘘......</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="年薪5万的女人和年薪20万的女人，差别居然这么大！">年薪5万的女人和年薪20万的女人，差别居然这么大！</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="男人大吼：“你不就是嫌我穷吗？要是我有钱你早就扑上来了！”女人回答的太精彩！">男人大吼：“你不就是嫌我穷吗？要是我有钱你早就扑上来了！”女人回答的太精彩！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="她被迫代嫁， 他被迫代娶，当温热的吻袭来.....">她被迫代嫁， 他被迫代娶，当温热的吻袭来.....</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="把女人当保姆的男人，该滚了！">把女人当保姆的男人，该滚了！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="要走的人你留不住，装睡的人你叫不醒，不爱你的人你感动不了">要走的人你留不住，装睡的人你叫不醒，不爱你的人你感动不了</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="拯救婚姻的从来不是性，但毁掉婚姻的往往是因为性e">拯救婚姻的从来不是性，但毁掉婚姻的往往是因为性</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="妻子出轨，丈夫默默原谅了她，她居然扬言要离婚！">妻子出轨，丈夫默默原谅了她，她居然扬言要离婚！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="“以身抵债，嫁给我。” “……谈好条件再说。”">“以身抵债，嫁给我。” “……谈好条件再说。”</a></li>
+
+                            <li><a  class="changet"   href="#" data-bind="如何做一个让男人有冲动的女人？">如何做一个让男人有冲动的女人？</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="你老公不爱你？好巧，我也是">你老公不爱你？好巧，我也是</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="女人出轨的真相到底是什么？">女人出轨的真相到底是什么？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="男人骨子里最惦记的女人永远是这一种！">男人骨子里最惦记的女人永远是这一种！</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="感情再好，也千万别找男人要这个东西！">感情再好，也千万别找男人要这个东西！</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="机关算尽，假装贞洁，欲擒故纵……">机关算尽，假装贞洁，欲擒故纵……</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="感情再好，也千万别找男人要这个东西！">感情再好，也千万别找男人要这个东西！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="替父还债，嫁给了生活不能自理的男人……">替父还债，嫁给了生活不能自理的男人……</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="想脱你衣服的人很多，想给你买衣服的有吗">想脱你衣服的人很多，想给你买衣服的有吗</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="出狱后，美女竟用这种方式迎接他……">出狱后，美女竟用这种方式迎接他……</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="替父还债，嫁给了生活不能自理的男人">替父还债，嫁给了生活不能自理的男人</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="换位思考，换位做事，换位做人">换位思考，换位做事，换位做人</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="女人请记住，你的格局决定着你的层次">女人请记住，你的格局决定着你的层次</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="是选择决定了你的一生，而不是努力">是选择决定了你的一生，而不是努力</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="你有多无知，就会多坎坷">你有多无知，就会多坎坷</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="婚姻里，你的付出给对了吗？">婚姻里，你的付出给对了吗？</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="《欢乐颂》最大启示：想做人生赢家从弄清楚自己想要什么开始">《欢乐颂》最大启示：想做人生赢家从弄清楚自己想要什么开始</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="原来，你接受不了的，正是你需要修炼的！！">原来，你接受不了的，正是你需要修炼的！！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="对人，对事，试着让自己不去计较">对人，对事，试着让自己不去计较</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="没有功劳有苦劳？呵呵哒，谁在乎你的苦劳">没有功劳有苦劳？呵呵哒，谁在乎你的苦劳</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="人生的三把钥匙：接受，改变，离开">人生的三把钥匙：接受，改变，离开</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="真正优秀的领导，绝不会让每个下属都高兴">真正优秀的领导，绝不会让每个下属都高兴</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="你所仰仗的，最后都会变成你的局限">你所仰仗的，最后都会变成你的局限</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="学会用心理预期来引导人际关系！">学会用心理预期来引导人际关系！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="男女都要明白:不同选择，不同境界。">男女都要明白:不同选择，不同境界。</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="男人为什么明明知道错了，却无法道歉？">男人为什么明明知道错了，却无法道歉？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="闪婚四年：婚姻不是两个人的相处，而是一个人的修炼">闪婚四年：婚姻不是两个人的相处，而是一个人的修炼</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="对婚姻伴侣的选择，是人生最重要的招聘">对婚姻伴侣的选择，是人生最重要的招聘</a></li>
+
+                            <li><a  class="changet"   href="#" data-bind="男人太快跟你发生关系说明了什么？">男人太快跟你发生关系说明了什么？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="能用“钱”解决的问题，千万不要去动“关系”">能用“钱”解决的问题，千万不要去动“关系”</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="怎样才能成为一个情绪成熟的女人">怎样才能成为一个情绪成熟的女人</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="总是被伤害，那是因为你自己没价值">总是被伤害，那是因为你自己没价值</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="为什么你总是不愿意主动联系别人？">为什么你总是不愿意主动联系别人？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="一个男人的角度：如何选择婚姻">一个男人的角度：如何选择婚姻</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="人生过的是心情，生活活的是心态">人生过的是心情，生活活的是心态</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="女人怕男人没钱，没爱，但最怕的是……">女人怕男人没钱，没爱，但最怕的是……</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="睡不到小包总的人生还有什么意思！">睡不到小包总的人生还有什么意思！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="爱，就是我需要你的时候，你都在！">爱，就是我需要你的时候，你都在！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="女人能不能接受“养男人”？">女人能不能接受“养男人”？</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="为什么99%年轻貌美的小三都打败不了原配？">为什么99%年轻貌美的小三都打败不了原配？</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="多少人在循环的日子里，走向毁灭...">多少人在循环的日子里，走向毁灭...</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="做人，复杂永远拼不过简">做人，复杂永远拼不过简单！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="我害怕找不到自己喜欢的方式度过一生">我害怕找不到自己喜欢的方式度过一生</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="如何达到从工作和生活之间获得平衡的15种最佳方法！">如何达到从工作和生活之间获得平衡的15种最佳方法！</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="不成熟男人的十大“病状”">不成熟男人的十大“病状”</a></li>
+
+                            <li><a  class="changet"   href="#" data-bind="假如你不工作了，怎样才能有源源不断的收入呢？">假如你不工作了，怎样才能有源源不断的收入呢？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="成功，就是比别人“快半步”！">成功，就是比别人“快半步”！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="人性如此矛盾，我们该如何善从人性？">人性如此矛盾，我们该如何善从人性？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="不要拿着别人的地图，找自己的路">不要拿着别人的地图，找自己的路</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="一个男人需要挣多少钱才能维系一个家庭？">一个男人需要挣多少钱才能维系一个家庭？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="清华大学教授吴维库演讲：情商与影响力">清华大学教授吴维库演讲：情商与影响力</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="一个老实人的世态炎凉">一个老实人的世态炎凉</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="自己不改变的话，新的一年也只是之前的重演">自己不改变的话，新的一年也只是之前的重演</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="深陷无奈，是什么捆绑了你的人生？">深陷无奈，是什么捆绑了你的人生？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="图说：你有没有当领导的潜质">图说：你有没有当领导的潜质 看完就知道了</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="寻找改变你人生的动力">寻找改变你人生的动力</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="金盛华：中国人为什么活得这么累">金盛华：中国人为什么活得这么累</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="我的人生不是木桶，别费心去补短了！">我的人生不是木桶，别费心去补短了！</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="性格不强势，关键时候总被牵着走怎么办？">性格不强势，关键时候总被牵着走怎么办？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="给自己一个成功的理由，你的路就会越走越宽">给自己一个成功的理由，你的路就会越走越宽</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="怎么花钱你才最有幸福感？">怎么花钱你才最有幸福感？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="事情很简单，复杂的是你：精简让生活更幸福">事情很简单，复杂的是你：精简让生活更幸福</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="对待家人的态度，显示一个男人真实的人品">对待家人的态度，显示一个男人真实的人品</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="生活比你更了解你自己：直面恐惧，享受人生">生活比你更了解你自己：直面恐惧，享受人生</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="男人一生最好的投资不是房，不是车，而是一个好女人">男人一生最好的投资不是房，不是车，而是一个好女人</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="你追求的是“幸福”，还是“比别人幸福”？！">你追求的是“幸福”，还是“比别人幸福”？！</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="不要总活在自己的世界里，也不要总活在别人的世界里">不要总活在自己的世界里，也不要总活在别人的世界里</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="没有过不去的事情，只有过不去的心情">没有过不去的事情，只有过不去的心情</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="请用对方需要的方式爱对方">请用对方需要的方式爱对方</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="千万别在最能吃苦的年纪选择了安逸">千万别在最能吃苦的年纪选择了安逸</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="婚姻里，夫妻间的相处比相爱还更重要">婚姻里，夫妻间的相处比相爱还更重要</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="男人如何经营幸福的婚姻">男人如何经营幸福的婚姻?</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="避免离婚首先生活事业要分开">避免离婚首先生活事业要分开</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="做最好的自己，才能碰见最好的别人">做最好的自己，才能碰见最好的别人</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="爱是一种能力 发掘幸福的潜力">爱是一种能力 发掘幸福的潜力</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="遇到爱你的人，感恩，遇到你爱的人，付出">遇到爱你的人，感恩，遇到你爱的人，付出</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="你活着不是为了生气">你活着不是为了生气</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="如果你觉得痛，说明到了该蜕变的阶段了">如果你觉得痛，说明到了该蜕变的阶段了</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="爱是一种能力，你能否具备？">爱是一种能力，你能否具备？</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="改变伴侣的最好方法就是展现改变自己的意愿">改变伴侣的最好方法就是展现改变自己的意愿</a></li>
+
+                            <li><a   class="changet"  href="#" data-bind="一个人生活VS跟一个不爱的人一起生活">一个人生活VS跟一个不爱的人一起生活</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="人生，一定是做了你该做的，才会得你想要的">人生，一定是做了你该做的，才会得你想要的</a></li>
+
+                            <li><a    class="changet" href="#" data-bind="把脾气拿出来是本能，把脾气压下去是本事" >把脾气拿出来是本能，把脾气压下去是本事</a></li>
+                            <!-- /ko -->
+                        </ul>
+                    </li>
+
+                    <li class="dropdown" >
+                        <a    href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded=""><i class="fa fa-image"></i> 文案封面 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!-- ko foreach: covers -->
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/500706-58799d37e88c8.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/500706-58799d37e88c8.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/D3F62B581BB072C5468169ED927489CC.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/D3F62B581BB072C5468169ED927489CC.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/5FCA48B1F52739EAF7061CA4FDB25397.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/5FCA48B1F52739EAF7061CA4FDB25397.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (4).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (4).jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg.jpg">
+                                </a>
+                            </li>
+
+
+                            <!-- 分割线 -->
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (8).jpeg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (8).jpeg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/QQ20170325-0.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/QQ20170325-0.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (6).jpeg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (6).jpeg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (3).jpeg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (3).jpeg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/WX20170326-143009@2x.png">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/WX20170326-143009@2x.png">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/WX20170311-195941.png">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/WX20170311-195941.png">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/WX20170326-123314.png">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/WX20170326-123314.png">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/WX20170314-232744.png">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/WX20170314-232744.png">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58d37a975ecfc.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d37a975ecfc.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58cf2459180ac.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf2459180ac.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58cf258f62228.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf258f62228.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58d37abe05999.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d37abe05999.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58d37c40af75e.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d37c40af75e.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#"  data-bind="__PUBLIC__/admin/images/58cf262b59237.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf262b59237.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58d379f4b4173.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d379f4b4173.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58d379fbbd6b9.png" >
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d379fbbd6b9.png">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/58d37ee8ae380.jpg" >
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d37ee8ae380.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#"  data-bind="__PUBLIC__/admin/images/58d37e9b9a147.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d37e9b9a147.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei" href="#" data-bind="__PUBLIC__/admin/images/TB2vf.5cypnpuFjSZFkXXc4ZpXa_!!1869984391.jpg" >
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/TB2vf.5cypnpuFjSZFkXXc4ZpXa_!!1869984391.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/629625-58799bc58a8c1.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/629625-58799bc58a8c1.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/217166-58799d9bcc2a1.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/217166-58799d9bcc2a1.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/914168-587851e5b9342.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/914168-587851e5b9342.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/345208-58784ddaa90d5.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/345208-58784ddaa90d5.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/491973-58799be44037e.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/491973-58799be44037e.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/58c57ca42a1fe.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58c57ca42a1fe.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58cf2605a1856.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf2605a1856.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58cf25f887590.JPG">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf25f887590.JPG">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58cf25644aa9e.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf25644aa9e.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/58cf2588a2a08.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf2588a2a08.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58cf2444dbbde.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf2444dbbde.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58d37ea272d95.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d37ea272d95.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58d37dc5d7425.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58d37dc5d7425.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/237573-58784eaad47f4.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/237573-58784eaad47f4.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/58cf2423d4d7e.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/58cf2423d4d7e.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/timg (24).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (24).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/timg (31).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (31).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/u=3213810318,787455978&amp;fm=23&amp;gp=0.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/u=3213810318,787455978&amp;fm=23&amp;gp=0.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (28).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (28).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/timg (20).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (20).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (17).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (17).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"  href="#" data-bind="__PUBLIC__/admin/images/u=2098741150,483861765&amp;fm=23&amp;gp=0.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/u=2098741150,483861765&amp;fm=23&amp;gp=0.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (19).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (19).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/timg (32).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (32).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"ef="#" data-bind="__PUBLIC__/admin/images/timg (29).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (29).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/tooopen_sy_171601115218.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/tooopen_sy_171601115218.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (24).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (24).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (15).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (15).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (25).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (25).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (21).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (21).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507202433.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202433.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei" href="#" data-bind="__PUBLIC__/admin/images/timg (3).jpg"">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (3).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507202632.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202632.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507202447.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202447.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507160124.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507160124.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/20170507202357.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202357.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/20170507202357.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202357.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507202508.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202508.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/20170507202429.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202429.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507160046.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507160046.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507202342.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202342.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/20170507202351.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202351.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507160021.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507160021.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507202337.jpg1">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202337.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/timg (2).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (2).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="changei"   href="#" data-bind="__PUBLIC__/admin/images/20170507202451.jp">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507202451.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a   class="changei" href="#" data-bind="__PUBLIC__/admin/images/timg (1).jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/timg (1).jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/tooopen_sy_178652358471.jpg">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/tooopen_sy_178652358471.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/tooopen_sy_178953555255.jp">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/tooopen_sy_178953555255.jpg">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a  class="changei"  href="#" data-bind="__PUBLIC__/admin/images/20170507160104.bmp">
+                                    <img style="max-width:200px;max-height:40px;"  src="__PUBLIC__/admin/images/20170507160104.bmp">
+                                </a>
+                            </li>
+                            <!-- /ko -->
+                        </ul>
+                    </li>
+
+                   <!--  <li class="dropdown">
+                        <a    href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="">正文模板 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body1.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body10.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body11.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body12.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body2.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body3.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body4.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body5.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body6.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body7.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body8.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a    href="#" data-bind="click: $root.changeBodyTemplate">
+                                    <img style="max-height: 40px;" data-bind="1" src="__PUBLIC__/admin/images/body9.jpg">
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li> -->
+
+                    <li class="dropdown">
+                        <a    href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="">原文引导模板 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!-- ko foreach: footer_templates -->
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a  class="changef"  href="#" data-bind="__PUBLIC__/admin/images/1.jpg">
+                                    <img style="max-height: 40px;"  src="__PUBLIC__/admin/images/1.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a  class="changef"  href="#" data-bind="__PUBLIC__/admin/images/2.jpg">
+                                    <img style="max-height: 40px;"  src="__PUBLIC__/admin/images/2.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a  class="changef"  href="#" data-bind="__PUBLIC__/admin/images/3.jpg">
+                                    <img style="max-height: 40px;"  src="__PUBLIC__/admin/images/3.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a   class="changef" href="#" data-bind="__PUBLIC__/admin/images/4.jpg">
+                                    <img style="max-height: 40px;"  src="__PUBLIC__/admin/images/4.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a  class="changef"  href="#" data-bind="__PUBLIC__/admin/images/5.jpg">
+                                    <img style="max-height: 40px;"  src="__PUBLIC__/admin/images/5.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a  class="changef"  href="#" data-bind="__PUBLIC__/admin/images/6.jpg">
+                                    <img style="max-height: 40px;"  src="__PUBLIC__/admin/images/6.jpg">
+                                </a>
+                            </li>
+
+                            <li style="border-bottom:#eee 1px solid;">
+                                <a  class="changef"  href="#" data-bind="__PUBLIC__/admin/images/7.jpg">
+                                    <img style="max-height: 40px;"  src="__PUBLIC__/admin/images/7.jpg">
+                                </a>
+                            </li>
+                            <!-- /ko -->
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a    href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded=""><i class="fa fa-copy"></i> 复制 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a    href="javascript:void(0);" id="btn-copy-title" data-clipboard-target="#wx-article-title">复制标题</a>
+                            </li>
+                            <li>
+                                <a   onclick="copy_flash();" id="btn-copy-content" data-clipboard-target="#wx-article-content">复制正文</a>
+                            </li>
+                            <li>
+                                <a    href="javascript:void(0);" id="btn-copy-url" >复制阅读原文链接</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+<!--
+                <div class="navbar-form navbar-right">
+                    <span data-bind="visible: is_novel_online">
+                                                    <button type="button" class="btn btn-primary" data-bind="click: openReferralLinkModal">
+                                <i class="fa fa-link"></i> 生成原文链接
+                            </button>
+                                            </span>
+                    <span data-bind="visible: !is_novel_online()" style="display:none;">
+                        <button type="button" class="btn btn-disabled">小说已下架</button>
+                    </span>
+                </div> -->
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="modal fade" id="create-referral-link-modal" tabindex="-1">
+    <!-- <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-bind="click: close" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" data-bind="text: title"></h4>
+            </div>
+            <div class="modal-body">
+                <div data-bind="visible: loading" class="loading-panel">
+                    <i class="fa fa-spin fa-spinner"></i>
+                </div>
+                <form class="form-horizontal" style="display: none" data-bind="visible: !loading()" novalidate="novalidate">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">入口页面</label>
+                        <div class="col-sm-7">
+                            <p class="form-control-static">
+                                <span data-bind="visible: type() == 0">小说阅读页</span>
+                                <span data-bind="visible: type() == 1">首页</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3"><span class="required" aria-required="true">*</span> 派单渠道名称</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" maxlength="100" name="description" data-val="true" data-val-required="请填写派单渠道名称" data-bind="value: description">
+                            <p class="help-block help-block-error" data-valmsg-for="description" data-valmsg-replace="true"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3"><span class="required" aria-required="true">*</span> 派单渠道类型</label>
+                        <div class="col-sm-7">
+                            <label class="radio-inline">
+                                <input type="radio" name="referrer_type" value="verified_mp" data-bind="checked: referrer_type" data-val="true" data-val-required="请选择派单渠道类型">
+                                <span>认证公众号</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="referrer_type" value="not_verified_mp" data-bind="checked: referrer_type">
+                                <span>非认证公众号</span>
+                            </label>
+                            <p class="help-block help-block-error" data-valmsg-for="referrer_type" data-valmsg-replace="true"></p>
+                        </div>
+                    </div>
+
+                    <div data-bind="visible: type() == 0" style="display:none">
+                        <div class="form-group">
+                            <div class="col-sm-7 col-sm-offset-3">
+                                <p class="form-control-static">
+                                    <img style="width:80px" data-bind="attr: { src: novel_avatar }">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">阅读原文章节</label>
+                            <div class="col-sm-7">
+                                <p class="form-control-static">
+                                    <strong data-bind="html: article_title"></strong>
+                                </p>
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <label class="control-label col-sm-3">关注章节序号</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" maxlength="100" name="force_follow_chapter_idx" placeholder="可选, 如不填则使用小说默认设置" data-val="true" data-val-digits="请输入数字" data-bind="value: force_follow_chapter_idx">
+                                <div data-bind="visible: force_follow_chapter_id" style="display:none;margin-top:5px">
+                                    <span data-bind="text: force_follow_chapter_title"></span>
+                                </div>
+                                <p class="help-block help-block-error" data-valmsg-for="force_follow_chapter_idx" data-valmsg-replace="true"></p>
+                            </div>
+                        </div>
+                                            </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: submit, text: id() ? &#39;保存修改&#39; : &#39;生成链接&#39;"></button>
+            </div>
+        </div>
+    </div> -->
+</div>
+<script type="text/javascript">
+$('.changet').click(function(event) {
+    var title = $(this).data('bind');
+    $('#wx-article-title').html(title);
+});
+$('.changei').click(function(event) {
+    var img = $(this).data('bind');
+    $('#showimg').attr('src',img);
+});
+$('.changef').click(function(event) {
+    var fimg = $(this).data('bind');
+    $('#showfimg').attr('src',fimg);
+});
+</script>
+<!-- js复制内容 -->
+<script type="text/javascript">
+$("#btn-copy-title").click(function(){
+    var str = $('#wx-article-title').html();
+    //var str = $div;
+    K.Tool.copy(str.replace(/&amp;/g,"&"));
+});
+// $("#btn-copy-content").click(function(){
+//     var str = $('#content_body').html();
+//     // var str = $('#copycontent').html();
+//     // str = str.replace(/<p>/g,"");
+//     // str = str.replace(/<\/p>/g,"");
+//     // str = str.replace(/&nbsp;/g,"");
+//     // str = str.replace(/<br>/g,"");
+//     K.Tool.copy(str);
+// });
+$("#btn-copy-url").click(function(){
+    var str = $('#copyurl').html();
+    K.Tool.copy(str.replace(/&amp;/g,"&"));
+});
+</script>
+<script type="text/javascript">
+function copy_flash()
+{
+    var text = document.getElementById("content_body");
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(text);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('Copy');
+    alert('已复制');
+}
+</script>
+<!-- <script>
+    var GetReferralLinkModal = function () {
+        var self = this;
+        var $modal = null;
+        var callbacks = null;
+        var defer = null;
+        var opts = null;
+        var link = null; // 生成的链接，{ id, url }
+        var model = {
+            loading: ko.observable(false),
+            submitting: ko.observable(false),
+
+            title: ko.observable(),
+
+            id: ko.observable(),
+            type: ko.observable(0),
+            article_id: ko.observable(),
+            novel_id: ko.observable(),
+            novel_avatar: ko.observable(),
+            novel_title: ko.observable(),
+            article_title: ko.observable(),
+            referrer_type: ko.observable(),
+            description: ko.observable(),
+            force_follow_chapter_idx: ko.observable(),
+            force_follow_chapter_id: ko.observable(),
+            force_follow_chapter_title: ko.observable(),
+
+            submit: function () {
+                self.submit();
+            },
+            close: function () {
+                self.close();
+            }
+        };
+
+        self.open = function (options) {
+            self.reset();
+
+            defer = $.Deferred();
+
+            opts = options;
+
+            if (!$modal) {
+                $modal = $('#create-referral-link-modal');
+                ko.applyBindings(model, $modal.find('.modal-content')[0]);
+
+                model.force_follow_chapter_idx.subscribe(function (idx) {
+                   if (!idx || !/^\d+$/.test(idx)) {
+                       model.force_follow_chapter_id(null);
+                       model.force_follow_chapter_title(null);
+                   } else {
+                       self.tryFetchForceFollowChapterInfo();
+                   }
+                });
+            }
+
+            callbacks = options.callbacks || {};
+
+            model.title(options.title || (options.id ? '修改推广链接属性' : '生成推广链接'));
+
+            if (options.type !== undefined) {
+                model.type(options.type);
+            }
+
+            model.loading(true);
+
+            var promise = $.Deferred().resolve().promise();
+
+            if (options.id) {
+                model.id(options.id);
+
+                promise = $.get('/backend/referral_links/api_get/' + options.id, function (result) {
+                    model.type(result.type);
+                    model.article_id(result.article_id);
+                    model.description(result.description);
+                    model.referrer_type(result.referrer_type);
+                    model.force_follow_chapter_idx(result.force_follow_chapter_idx);
+
+                    opts.wx_article_title_id = result.wx_article_title_id;
+                    opts.wx_article_cover_id = result.wx_article_cover_id;
+                    opts.wx_article_body_template_id = result.wx_article_body_template_id;
+                    opts.wx_article_footer_template_id = result.wx_article_footer_template_id;
+                });
+            } else {
+                model.article_id(options.article_id);
+            }
+
+            promise.then(function () {
+                self.tryFetchNovelArticleInfo();
+                self.tryFetchForceFollowChapterInfo();
+                model.loading(false);
+            });
+
+            $modal.modal('show');
+
+            return defer.promise();
+        };
+
+        self.tryFetchNovelArticleInfo = function () {
+            var articleId = model.article_id();
+            if (!articleId) {
+                return $.Deferred().resolve();
+            }
+
+            return $.get('/backend/novels/api_get_short_article_info/' + articleId)
+                .then(function (result) {
+                    model.novel_id(result.novel.id);
+                    model.novel_avatar(result.novel.avatar);
+                    model.novel_title(result.novel.title);
+                    model.article_title(result.title);
+                });
+        };
+
+        self.tryFetchForceFollowChapterInfo = function () {
+            var idx = model.force_follow_chapter_idx();
+            if (idx) {
+                idx = parseInt(idx);
+            }
+
+            if (!idx) {
+                return false;
+            }
+
+            // 如果 novel_id 未加载，也忽略，novel_id 加载后会再触发一次获取关注章节信息
+            if (!model.novel_id()) {
+                return false;
+            }
+
+            $.get('/backend/articles/api_get_basic_info_by_idx', {
+                nid: model.novel_id(),
+                idx: model.force_follow_chapter_idx()
+            })
+                .then(function (result) {
+                    model.force_follow_chapter_id(result.id);
+                    model.force_follow_chapter_title(result.title);
+                })
+                .fail(handleAjaxError);
+        };
+
+        self.submit = function () {
+            if (model.submitting()) {
+                return false;
+            }
+
+            if (!$modal.find('form').valid()) {
+                return false;
+            }
+
+            model.submitting(true);
+
+            $.ajax({
+                url: '/backend/referral_links/api_save',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    id: model.id(),
+                    type: model.type(),
+                    article_id: model.article_id(),
+                    referrer_type: model.referrer_type(),
+                    force_follow_chapter_idx: model.force_follow_chapter_idx(),
+                    description: model.description(),
+                    wx_article_title_id: opts.wx_article_title_id,
+                    wx_article_cover_id: opts.wx_article_cover_id,
+                    wx_article_body_template_id: opts.wx_article_body_template_id,
+                    wx_article_footer_template_id: opts.wx_article_footer_template_id
+                })
+            })
+                .then(function (result) {
+                    link = result;
+
+                    if (callbacks.link_generated) {
+                        callbacks.link_generated(result);
+                    }
+
+                    self.close();
+
+                    Modal.open({
+                        title: model.id() ? '保存成功' : '推广链接生成成功',
+                        backdrop: 'static',
+                        keyboard: false,
+                        body:
+                            '<div>' +
+                                '<div>请复制下方推广链接，后续您可以在后台菜单的"推广链接"中找到它并查看统计数据:</div>' +
+                                '<div style="margin:10px 0" class="text-primary">' + result.url + '</div>' +
+                                '<div style="margin:10px 0;color:red;font-weight:bold;"><i class="fa fa-info-circle"></i> 请务必使用此链接作为文案的原文链接，不要使用微信中点开后手工复制的链接</div>' +
+                            '</div>',
+                        callbacks: {
+                            close: function () {
+                                if (link) {
+                                    defer.resolve(link);
+                                } else {
+                                    defer.reject({ reason: 'cancel' });
+                                }
+                            }
+                        },
+                        buttons: [
+                            {
+                                text: '复制链接',
+                                className: 'btn-primary',
+                                clipboard: {
+                                    text: function () {
+                                        return link.url;
+                                    },
+                                    success: function () {
+                                        var $modal = this.$modal();
+                                        var $hint = $modal.find('.copy-success-hint');
+                                        if ($hint.length === 0) {
+                                            $modal.find('.modal-footer').prepend('<span style="display:inline-block;margin-right:10px;color:red;vertical-align:middle;" class="copy-success-hint"></span>');
+                                            $hint = $modal.find('.copy-success-hint');
+                                        }
+
+                                        $hint.html('复制成功!');
+                                    }
+                                }
+                            },
+                            {
+                                text: '关闭',
+                                click: function () {
+                                    this.close();
+                                }
+                            }
+                        ]
+                    })
+                })
+                .fail(handleAjaxError)
+                .always(function () {
+                    model.submitting(false);
+                });
+        };
+
+        self.close = function () {
+            $modal.modal('hide');
+        };
+
+        self.reset = function () {
+            link = null;
+
+            model.loading(false);
+            model.submitting(false);
+
+            model.id(null);
+            model.article_id(null);
+            model.novel_avatar(null);
+            model.novel_title(null);
+            model.article_title(null);
+            model.referrer_type(null);
+            model.force_follow_chapter_idx(null);
+            model.force_follow_chapter_id(null);
+            model.force_follow_chapter_title(null);
+            model.description(null);
+        }
+    };
+
+    GetReferralLinkModal.instance = new GetReferralLinkModal();
+
+    $(function () {
+        $(document).on('click', '[data-toggle="create-referral-link"]', function () {
+            GetReferralLinkModal.instance.open({
+                article_id: $(this).data('article-id')
+            });
+
+            return false;
+        });
+    });
+</script> -->
+
+    <!-- <script>
+        $(function () {
+            var editor = new WxArticleEditor({
+                novel_id: 35,
+                is_novel_online: true,
+                article_id: 19778,
+                next_article_id: 19779,
+                category_id: 11,
+                referral_link_id: null,
+                title_id: null,
+                cover_id: null,
+                body_template_id: '',
+                footer_template_id: ''
+            });
+
+            editor.init();
+
+            new Clipboard('#btn-copy-title').on('success', function (e) {
+                e.clearSelection();
+                toastr.success('标题复制成功');
+            });
+            new Clipboard('#btn-copy-content').on('success', function (e) {
+                e.clearSelection();
+                toastr.success('正文复制成功');
+            });
+
+            $('[data-toggle="copy-link"]').each(function () {
+                var clipboard = new Clipboard(this, {
+                    text: function () {
+                        return $('#txt-referral-link').val();
+                    }
+                });
+                clipboard.on('success', function (e) {
+                    e.clearSelection();
+                    toastr.success('链接复制成功');
+                });
+            });
+        });
+
+        var EditorBar = function (options) {
+            var self = this;
+            var editor = options.editor;
+            var model = {
+                is_novel_online: ko.observable(options.is_novel_online),
+                titles: ko.observableArray(options.titles),
+                covers: ko.observableArray(options.covers),
+                body_templates: ko.observableArray(options.body_templates),
+                footer_templates: ko.observableArray(options.footer_templates),
+
+                changeTitle: function (title) {
+                    scrollToElement('#wx-article-title', { offset: 10 }, function () {
+                        editor.changeTitle(title.id);
+                    });
+                },
+
+                changeCover: function (cover) {
+                    scrollToElement('#wx-article-cover', { offset: 10 }, function () {
+                        editor.changeCover(cover.id);
+                    });
+                },
+
+                changeBodyTemplate: function (template) {
+                    scrollToElement('#wx-article-body', { offset: 10 }, function () {
+                        editor.changeBodyTemplate(template.id);
+                    });
+                },
+
+                changeFooterTemplate: function (template) {
+                    scrollToElement('#wx-article-footer', { offset: 10 }, function () {
+                        editor.changeFooterTemplate(template.id);
+                    });
+                },
+
+                openReferralLinkModal: function () {
+                    GetReferralLinkModal.instance
+                        .open({
+                            article_id: editor.nextArticleId,
+                            wx_article_title_id: editor.titleId,
+                            wx_article_cover_id: editor.coverId,
+                            wx_article_body_template_id: editor.bodyTemplateId,
+                            wx_article_footer_template_id: editor.footerTemplateId
+                        })
+                        .then(function (link) {
+                            location.href = '/backend/wx_article_editor?referral_link_id=' + link.id;
+                        });
+                },
+
+                editReferralLink: function () {
+                    GetReferralLinkModal.instance
+                        .open({
+                            id: editor.referralLinkId,
+                            article_id: editor.nextArticleId,
+                            wx_article_title_id: editor.titleId,
+                            wx_article_cover_id: editor.coverId,
+                            wx_article_body_template_id: editor.bodyTemplateId,
+                            wx_article_footer_template_id: editor.footerTemplateId
+                        });
+                }
+            };
+
+            self.init = function () {
+                ko.applyBindings(model, document.getElementById('editor-bar'));
+            }
+        };
+
+        var WxArticleEditor = function (options) {
+            var self = this;
+            var previewArticles = [];
+            var covers = [];
+            var titles = [];
+            var footerTemplates = [];
+            var bodyTemplates = [];
+
+            var $title = $('#wx-article-title');
+            var $cover = $('#wx-article-cover');
+            var $body = $('#wx-article-body');
+            var $footer = $('#wx-article-footer');
+
+            var editorBar = null;
+
+            this.titleId = options.title_id;
+
+            this.coverId = options.cover_id;
+
+            this.bodyTemplateId = options.body_template_id;
+
+            this.footerTemplateId = options.footer_template_id;
+
+            this.referralLinkId = options.referral_link_id;
+
+            this.novelId = options.novel_id;
+
+            this.categoryId = options.category_id;
+
+            this.articleId = options.article_id;
+
+            this.nextArticleId = options.next_article_id;
+
+            this.init = function () {
+                return $.when(
+                        loadCovers(),
+                        loadTitles(),
+                        loadFooterTemplates(),
+                        loadBodyTemplates(),
+                        loadPreviewArticles()
+                    )
+                    .then(function () {
+                        editorBar = new EditorBar({
+                            editor: self,
+                            is_novel_online: options.is_novel_online,
+                            titles: titles,
+                            covers: covers,
+                            body_templates: _.map(bodyTemplates, function (it) {
+                                return { id: it.id, preview_img: it.preview_img };
+                            }),
+                            footer_templates: _.map(footerTemplates, function (it) {
+                                return { id: it.id, preview_img: it.preview_img };
+                            })
+                        });
+
+                        editorBar.init();
+
+                        if (self.titleId) {
+                            self.changeTitle(self.titleId);
+                        } else {
+                            renderTitle(_.sample(titles));
+                        }
+
+                        if (self.coverId) {
+                            self.changeCover(self.coverId);
+                        } else {
+                            renderCover(_.sample(covers));
+                        }
+
+                        if (self.bodyTemplateId) {
+                            self.changeBodyTemplate(self.bodyTemplateId);
+                        } else {
+                            renderBody(_.sample(bodyTemplates));
+                        }
+
+                        if (self.footerTemplateId) {
+                            self.changeFooterTemplate(self.footerTemplateId);
+                        } else {
+                            renderFooter(_.sample(footerTemplates));
+                        }
+                    });
+            };
+
+            this.changeTitle = function (id) {
+                var title = _.find(titles, function (it) {
+                    return it.id == id;
+                });
+
+                renderTitle(title);
+            };
+
+            this.changeCover = function (id) {
+                var cover = _.find(covers, function (it) {
+                    return it.id == id;
+                });
+
+                renderCover(cover);
+            };
+
+            this.changeBodyTemplate = function (id) {
+                var template = _.find(bodyTemplates, function (it) {
+                    return it.id == id;
+                });
+
+                renderBody(template);
+            };
+
+            this.changeFooterTemplate = function (id) {
+                var template = _.find(footerTemplates, function (it) {
+                    return it.id == id;
+                });
+
+                renderFooter(template);
+            };
+
+            function renderTitle(title) {
+                if (!title) {
+                    return false;
+                }
+
+                self.titleId = title.id;
+
+                $title.html(title.title);
+            }
+
+            function renderCover(cover) {
+                if (!cover) {
+                    return false;
+                }
+
+                self.coverId = cover.id;
+
+                $cover.html('<img style="width:100%;display:block;margin-bottom:20px;" src="' + cover.cover_url + '" />');
+            }
+
+            function renderBody(template) {
+                if (!template) {
+                    return false;
+                }
+
+                self.bodyTemplateId = template.id;
+
+                if (!template.compiled_template) {
+                    template.compiled_template = Handlebars.compile(template.template);
+                }
+
+                $body.html(template.compiled_template({ chapters: previewArticles }));
+            }
+
+            function renderFooter(template) {
+                if (!template) {
+                    return false;
+                }
+
+                self.footerTemplateId = template.id;
+
+                $footer.html(template.template);
+            }
+
+            function loadPreviewArticles() {
+                return $.get('/backend/wx_article_editor/api_get_preview_articles?current_article_id=' + self.articleId, function (data) {
+                    previewArticles = data;
+                });
+            }
+
+            function loadCovers() {
+                return $.get('/backend/wx_articles/api_get_covers?cid=' + self.categoryId, function (data) {
+                    covers = data;
+                });
+            }
+
+            function loadTitles() {
+                return $.get('/backend/wx_articles/api_get_titles?cid=' + self.categoryId, function (data) {
+                    titles = data;
+                });
+            }
+
+            function loadFooterTemplates() {
+                return $.get('/backend/wx_articles/api_get_footer_templates', function (data) {
+                    footerTemplates = data;
+                });
+            }
+
+            function loadBodyTemplates() {
+                return $.get('/backend/wx_articles/api_get_body_templates', function (data) {
+                    bodyTemplates = data;
+                });
+            }
+        }
+    </script> -->
+
+</body></html>

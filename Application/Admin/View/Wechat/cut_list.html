@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>砍单记录</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<!--     <script>
+      (function () {
+        if (window !== window.top) {
+          window.top.location.href = 'http://www.818tu.com';
+        }
+      })();
+    </script>
+ -->
+    <!-- bootstrap & fontawesome -->
+
+
+
+
+
+
+
+
+    <!-- page specific plugin styles -->
+    <script src="__PUBLIC__/admin/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/admin/js/lodash.min.js"></script>
+    <script src="__PUBLIC__/admin/js/moment.min.js"></script>
+    <script src="__PUBLIC__/admin/js/zh-cn.js"></script>
+    <script src="__PUBLIC__/admin/js/numeral.min.js"></script>
+    <script src="__PUBLIC__/admin/js/toastr.min.js"></script>
+    <script src="__PUBLIC__/admin/js/cookies.js"></script>
+    <script src="__PUBLIC__/admin/js/knockout-min.js"></script>
+    <script src="__PUBLIC__/admin/js/knockout.mapping.min.js"></script>
+    <script src="__PUBLIC__/admin/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="__PUBLIC__/admin/js/clipboard.min.js"></script>
+    <script src="__PUBLIC__/admin/js/select2.min.js"></script>
+    <script src="__PUBLIC__/admin/js/admin.js"></script>
+    <script src="__PUBLIC__/admin/js/K.js"></script>
+    <script>
+      moment.locale('zh-cn');
+      toastr.options.positionClass = 'toast-bottom-right';
+    </script>
+
+    <!-- text fonts -->
+
+
+    <!-- ace styles -->
+
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="http://novel.818tu.com/static/assets/css/ace-part2.min.css" />
+    <![endif]-->
+
+
+
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="http://novel.818tu.com/static/css/ace-ie.min.css" />
+    <![endif]-->
+
+
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="__PUBLIC__/admin/js/ace-extra.min.js"></script>
+
+ <!--    <script>
+      var __BASEURL = "http://novel.818tu.com/";
+    </script> -->
+<link href="__PUBLIC__/admin/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+<link media="all" href="__PUBLIC__/admin/css/index04.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/glyphicons-halflings-regular.css">
+</head>
+<body class="no-skin">
+
+    <!-- #section:basics/navbar.layout -->
+    <include file="./Public/gong/title.html" />
+
+    <div class="main-container" id="main-container">
+      <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+      </script>
+
+      <div id="sidebar" class="sidebar responsive">
+          <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+          </script>
+
+<include file="./Public/gong/list.html" />
+          <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+          </div>
+
+          <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+          </script>
+      </div>
+
+      <!-- /section:basics/sidebar -->
+      <div class="main-content">
+
+        <!--             <div id="invalid-mp-settings-hint" style="border-top: 0px none; border-left: 0px none; border-right: 0px none; margin: 0px;" class="alert alert-warning">
+    <i class="fa fa-warning"></i> 您的公众号配置不完整，推广前请务必配置好公众号信息。<a    href="#">立即配置</a>
+</div> -->
+<!--
+<script>
+    $.get('/backend/settings/api_check_mp_settings?t' + new Date().getTime(), function (result) {
+        if (!result.valid) {
+            $('#invalid-mp-settings-hint').slideDown();
+        }
+    });
+</script> -->
+        <div class="breadcrumbs" id="breadcrumbs">
+          <script type="text/javascript">
+            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+          </script>
+
+          <ul class="breadcrumb">
+            <li>
+              <i class="ace-icon fa fa-home home-icon"></i>
+              <a    href="#">Home</a>
+            </li>
+            <li class="active">砍单记录</li>
+          </ul><!-- /.breadcrumb -->
+
+          <!-- /section:basics/content.searchbox -->
+        </div>
+
+        <!-- /section:basics/content.breadcrumbs -->
+        <div class="page-content">
+          <div class="page-content-area">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+
+                <!--/span-->
+                <!-- left menu ends -->
+
+
+
+
+
+<table class="table table-striped table-bordered table-hover responsive" id="dataTables-example">
+    <thead>
+        <tr>
+            <td>
+                推广人
+            </td>
+            <td>
+                订单号
+            </td>
+            <td>
+                砍单时间
+            </td>
+            <td class="text-right">
+                砍单金额
+            </td>
+            <td class="text-right">
+                充值类型
+            </td>
+
+            <!-- <td class="text-center">
+                操作
+            </td> -->
+        </tr>
+    </thead>
+    <tbody>
+        <volist name="chanrgecut" id="vl">
+            <tr class="referral-link-item gradeX" >
+                <td>
+                    {$vl.username}
+                </td>
+                <td>
+                    {$vl.onum}
+                </td>
+                <td>
+                    {$vl.time|date="Y-m-d H:i:s",###}
+                </td>
+                <td>
+                    {$vl.moneycut}
+                </td>
+                <td>
+                    {$vl.type}
+                </td>
+
+
+            </tr>
+        </volist>
+    </tbody>
+</table>
+<!-- copy -->
+<script type="text/javascript">
+$(".fa-copy").click(function(){
+    var str = $(this).prev("span").html();
+    //alert(str);
+    K.Tool.copy(str.replace(/&amp;/g,"&"))
+});
+
+</script>
+
+<!-- <div class="modal fade" id="create-referral-link-modal" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-bind="click: close" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" data-bind="text: title"></h4>
+            </div>
+            <div class="modal-body">
+                <div data-bind="visible: loading" class="loading-panel">
+                    <i class="fa fa-spin fa-spinner"></i>
+                </div>
+                <form class="form-horizontal" style="display: none;" data-bind="visible: !loading()" novalidate="novalidate" action="http://novel.818tu.com/backend/referral_links/index">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">入口页面</label>
+                        <div class="col-sm-7">
+                            <p class="form-control-static">
+                                <span data-bind="visible: type() == 0">小说阅读页</span>
+                                <span data-bind="visible: type() == 1">首页</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3"><span class="required" aria-required="true">*</span> 派单渠道名称</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" maxlength="100" name="description" data-val="true" data-val-required="请填写派单渠道名称" data-bind="value: description" value="" type="text">
+                            <p class="help-block help-block-error" data-valmsg-for="description" data-valmsg-replace="true"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3"><span class="required" aria-required="true">*</span> 派单渠道类型</label>
+                        <div class="col-sm-7">
+                            <label class="radio-inline">
+                                <input name="referrer_type" value="verified_mp" data-bind="checked: referrer_type" data-val="true" data-val-required="请选择派单渠道类型" type="radio">
+                                <span>认证公众号</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input name="referrer_type" value="not_verified_mp" data-bind="checked: referrer_type" type="radio">
+                                <span>非认证公众号</span>
+                            </label>
+                            <p class="help-block help-block-error" data-valmsg-for="referrer_type" data-valmsg-replace="true"></p>
+                        </div>
+                    </div>
+
+                    <div data-bind="visible: type() == 0" style="display: none;">
+                        <div class="form-group">
+                            <div class="col-sm-7 col-sm-offset-3">
+                                <p class="form-control-static">
+                                    <img style="width: 80px;" data-bind="attr: { src: novel_avatar }">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">阅读原文章节</label>
+                            <div class="col-sm-7">
+                                <p class="form-control-static">
+                                    <strong data-bind="html: article_title"></strong>
+                                </p>
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <label class="control-label col-sm-3">关注章节序号</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" maxlength="100" name="force_follow_chapter_idx" placeholder="可选, 如不填则使用小说默认设置" data-val="true" data-val-digits="请输入数字" data-bind="value: force_follow_chapter_idx" value="" type="text">
+                                <div data-bind="visible: force_follow_chapter_id" style="display: none; margin-top: 5px;">
+                                    <span data-bind="text: force_follow_chapter_title"></span>
+                                </div>
+                                <p class="help-block help-block-error" data-valmsg-for="force_follow_chapter_idx" data-valmsg-replace="true"></p>
+                            </div>
+                        </div>
+                                            </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: submit, text: id() ? '保存修改' : '生成链接'"></button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+                                <!-- PAGE CONTENT ENDS -->
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.page-content-area -->
+                </div><!-- /.page-content -->
+            </div><!-- /.main-content -->
+
+        </div><!-- /.main-container -->
+
+        <!-- basic scripts -->
+
+       <!--  <script type="text/javascript">
+            if('ontouchstart' in document.documentElement) document.write("<script src='http://novel.818tu.com/static/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+        </script> -->
+        <script src="__PUBLIC__/admin/js/bootstrap.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.webui-popover.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.ui.widget.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.fileupload.min.js"></script>
+
+        <!-- page specific plugin scripts -->
+
+        <!-- ace scripts -->
+        <script src="__PUBLIC__/admin/js/ace-elements.min.js"></script>
+        <script src="__PUBLIC__/admin/js/ace.min.js"></script>
+
+        <!-- inline scripts related to this page -->
+
+        <!-- the following scripts are used in demo only for onpage help and you don't need them -->
+
+
+       <!--  <script type="text/javascript"> ace.vars['base'] = 'http://novel.818tu.com/static'; </script> -->
+        <script src="__PUBLIC__/admin/js/elements.onpage-help.js"></script>
+        <script src="__PUBLIC__/admin/js/ace.onpage-help.js"></script>
+        <script src="__PUBLIC__/admin/dataTables/jquery.dataTables.js"></script>
+        <script src="__PUBLIC__/admin/dataTables/dataTables.bootstrap.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('#dataTables-example').dataTable();
+                });
+        </script>
+
+</body>
+</html>

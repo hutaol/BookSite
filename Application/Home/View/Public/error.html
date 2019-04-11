@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <title>系统提示</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+   <link media="all" href="__PUBLIC__/home/css/index20.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+
+
+<header class="header" style="background: rgb(2,200,141) none repeat scroll 0% 0%;">
+
+    <b>提示页面</b>
+
+</header>
+<section>
+    <div class="tipBox">
+        <img src="__PUBLIC__/home/img/timg.jpg">
+        <!-- <p>登陆成功了 双击评论666</p> -->
+        <present name="message">
+            <p><?php echo($message); ?></p>
+            <else />
+            <p><?php echo($error); ?></p>
+            </present>
+            <h5>页面自动 <a id="href" class="text-primary" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b></h5>
+    </div>
+</section>
+
+
+
+<script src="__PUBLIC__/home/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/home/js/layer.js" type="text/javascript"></script>
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+    var time = --wait.innerHTML;
+    if(time <= 0) {
+        location.href = href;
+        clearInterval(interval);
+    };
+}, 1000);
+})();
+</script>
+<script>
+    $('.noAddressBox').height($(window).height()-99);
+    $(document).ready(function(){
+//			if($('.haveGoodsBox').height()==0){
+//				$('.haveGoodsBox').hide();
+//				$('.noGoodsBox').show();
+//			}else{
+//				$('.haveGoodsBox').show();
+//				$('.noGoodsBox').hide();
+//			}
+
+        $('.operationBox').on('click','span i',function(){
+            $('.operationBox span i').removeClass('defaltSelected');
+            $(this).addClass('defaltSelected');
+            var ajax_address_id=$(this).data("address_id");
+            $.ajax({
+                url:"flow.php?step=setDefaultAddressId",
+                type:"POST",
+                dataType:"JSON",
+                data:{ajax_address_id:ajax_address_id},
+                success:function(callback_l){
+                    if(callback_l.result=="success"){
+                        layer.msg(callback_l.content);
+                    }else{
+                        layer.msg(callback_l.content);
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+
+</script>
+
+<!--
+    <section>
+    	<div class="cartPopupBox">
+    		<div class="cartPopup">
+    			<a href="http://www.zcyb365.com/mobile/cart.php"><span>去购物车</span></a>
+    			<a href="http://www.zcyb365.com/mobile/cart_ex.php"><span>去兑换车</span></a>
+    		</div>
+    	</div>
+    </section> -->
+
+<script>
+	$(document).ready(function(){
+		$('.vf_nav ul li').click(function(e){
+			$('.vf_nav ul li').removeClass('vf_active');
+			$(this).addClass('vf_active');
+			if($(this).index()==3){
+				$('.cartPopupBox').show();
+				$('.cartPopupBox').height($(window).height());
+				$('body').css('overflow-y','hidden');
+			}
+
+		});
+		$('.cartPopupBox').click(function(e){
+			if(e.target.nodeName=='DIV'){
+				$(this).hide();
+			}
+			//$(this).hide();
+			//e.stopPropagation();
+			//e.preventDefault();
+		});
+
+	});
+</script>
+<!-- 	<div style="display: none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258040700'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258040700%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1258040700"></span><script src="__PUBLIC__/home/js/z_stat.php" type="text/javascript"></script></div> -->
+</body>
+</html>

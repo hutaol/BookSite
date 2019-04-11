@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <title>充值活动</title>
+        <meta property="qc:admins" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">
+        <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
+        <!-- <script>
+            var BASE_URL = "/projects";
+        </script> -->
+    </head>
+
+    <body class="project-fixed" style="background:#fff;">
+            <!---->
+
+            <div id="item_header">
+                <a href="__URL__/index.html" class="datail-banner-head" >
+                    <img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;transform: rotate(180deg);">
+                    <div style="float: left;color:#fff;font-size:1em;margin-left:3px;padding-top: 1px;">返回</div>
+                </a>
+                <div style="margin: auto;width: 57%;margin-top: 12px;text-align: center;color: #fff;"></div>
+                <a href="" class="detail-banner-mine">
+                    <!--<img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
+                </a>
+            </div>
+            <div style="margin-top: 43px;">
+                <div class="axc-console axc-error" id="axc-error">
+                    <i class="axc-base axc-infor-base"></i>
+                    <span></span>
+                </div>
+                <div class="biao" style="height:30px;">促销充值</div>
+                <div class="user-lists" >
+                    <div class="chong">
+                        <div class="yu">
+                            您的余额：<span style="color:#fe8a01;">{$user.gold}</span>  书币
+                        </div>
+                        <div class="yu2">
+                            选择充值的金额<a style="color:red;">（1元 = {$buys.ratio} 金币）</a>
+                            <ul>
+                                <li class="yu2-li">
+                                    <a href="__URL__/jumprecharge2?pay=30">
+                                        <div class="yy1">
+                                            30元
+                                        </div>
+                                        <div class="yy4">{$buys['ratio'] * 30}书币+{$prom.p30}书币</div>
+                                        <div  class="yy4" style="color:red;">多送{$prom.p30}书币</div>
+                                    </a>
+                                </li>
+                                <li class="yu2-li2">
+                                    <a href="__URL__/jumprecharge2?pay=50">
+                                        <div class="yy1">
+
+                                            50元
+                                        </div>
+                                        <div class="yy4">{$buys['ratio'] * 50}+{$prom.p50}书币</div>
+                                        <div  class="yy4" style="color:red;">多送{$prom.p50}书币</div>
+                                    </a>
+                                </li>
+                                <li class="yu2-li">
+                                    <a href="__URL__/jumprecharge2?pay=100">
+                                        <div class="yy1">
+                                            100元
+                                        </div>
+                                        <div class="yy4">{$buys['ratio'] * 100}+{$prom.p100}书币</div>
+                                        <div  class="yy4" style="color:red;">多送{$prom.p100}书币</div>
+                                    </a>
+                                </li>
+                                <li class="yu2-li2">
+                                    <a href="__URL__/jumprecharge2?pay=200">
+                                        <div class="yy1">
+                                            200元
+                                        </div>
+                                        <div class="yy4">{$buys['ratio'] * 200}+{$prom.p200}书币</div>
+                                        <div  class="yy4" style="color:red;">多送{$prom.p200}书币</div>
+                                    </a>
+                                </li>
+                                <li class="yu2-li2" style="float:left;">
+                                    <a href="__URL__/jumprecharge2?pay=vip">
+                                        <div class="yy1">
+                                            <img src="__PUBLIC__/home/img/nian.png" alt="" / style="width:20px;height:20px;">
+                                            年费VIP会员
+                                        </div>
+                                        <div  class="yy2" style="color:red;">（{$prom.pvip}元）</div>
+                                        <div  class="yy3">全年免费看</div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a class="queren">
+                                确认充值
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </body>
+
+</html>

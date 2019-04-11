@@ -1,0 +1,205 @@
+<ul class="nav nav-list">
+
+    <li>
+        <a    href="__APP__/Admin/Index/index.html">
+            <i class="menu-icon fa fa-fw fa-bullhorn"></i>
+            <span class="menu-text">通知公告</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/Index/news_list.html">
+            <i class="menu-icon fa fa-fw fa-bullhorn"></i>
+            <span class="menu-text">公告管理</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+   
+    
+</if>
+    <li>
+        <a    href="__APP__/Admin/Static/chanrge_static.html">
+            <i class="menu-icon fa fa-fw fa-bar-chart"></i>
+            <span class="menu-text">数据统计</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+    <li>
+        <a    href="__APP__/Admin/Static/order_static.html">
+            <i class="menu-icon menu-icon fa fa-fw fa-list-alt"></i>
+            <span class="menu-text"> 订单管理 </span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/Book/add_book.html">
+            <i class="menu-icon fa fa-fw fa-tasks"></i>
+            <span class="menu-text">发布小说</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+    <li>
+        <a    href="__APP__/Admin/Book/book_list.html">
+            <i class="menu-icon fa fa-fw fa-tasks"></i>
+            <span class="menu-text">小说列表</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/Static/book_static.html">
+            <i class="menu-icon fa fa-fw fa-tasks"></i>
+            <span class="menu-text">小说收入</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+    <li>
+        <a    href="__APP__/Admin/Static/link_static.html">
+            <i class="menu-icon fa fa-fw fa-link"></i>
+            <span class="menu-text">推广链接</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+    <if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/Static/activity_list.html">
+            <i class="menu-icon fa fa-fw fa-shopping-cart"></i>
+            <span class="menu-text">促销活动</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+    <li>
+        <a    href="__APP__/Admin/Static/activity_list_static.html">
+            <i class="menu-icon fa fa-fw fa-shopping-cart"></i>
+            <span class="menu-text">促销活动统计</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+  </if>  
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/Wechat/reply_keywords.html">
+            <i class="menu-icon fa fa-fw fa-commenting"></i>
+            <span class="menu-text">关键字回复</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/User/manage_admin.html">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">代理管理</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/User/admin_change_list.html">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">代理充值</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/User/admin_fenchange.html">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">利润分成</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+    <li>
+        <a    href="__APP__/Admin/User/mydeposit.html">
+            <i class="menu-icon fa fa-fw fa-sticky-note-o"></i>
+            <span class="menu-text">我的结算单</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/User/deposit_list.html">
+            <i class="menu-icon fa fa-fw fa-sticky-note-o"></i>
+            <span class="menu-text">代理结算单</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+    <!-- <li>
+        <a    href="#">
+            <i class="menu-icon fa fa-fw fa-sticky-note-o"></i>
+            <span class="menu-text">代理打款</span>
+        </a>
+        <b class="arrow"></b>
+    </li> -->
+    <!-- <li>
+        <a    href="#">
+            <i class="menu-icon fa fa-fw fa-envelope-o"></i>
+            <span class="menu-text">邀请列表</span>
+        </a>
+        <b class="arrow"></b>
+    </li> -->
+    <!-- <li>
+        <a    href="#">
+            <i class="menu-icon fa fa-fw fa-credit-card"></i>
+            <span class="menu-text">收款信息</span>
+        </a>
+        <b class="arrow"></b>
+    </li> -->
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/Wechat/set_signal.html">
+            <i class="menu-icon fa fa-fw fa-gears"></i>
+            <span class="menu-text">网站设置</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a    href="__APP__/Admin/User/do_all_deposit">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">一键提现</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+<if condition="$admin['level'] heq '0'">
+    <li>
+        <a href="__APP__/Admin/Wechat/add_web.html">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">添加域名</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+    <li>
+        <a href="__APP__/Admin/Wechat/edit_cut.html">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">设置订单数</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+    <li>
+        <a href="__APP__/Admin/Wechat/cut_list.html">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">砍单记录</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+    <li>
+        <a href="__APP__/Admin/Wechat/repassword.html">
+            <i class="menu-icon fa fa-fw fa-user-plus"></i>
+            <span class="menu-text">修改密码</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+</if>
+</ul>

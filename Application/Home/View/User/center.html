@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <title>个人中心</title>
+        <meta property="qc:admins" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">
+        <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
+       <!--  <script>
+            var BASE_URL = "/projects";
+        </script> -->
+    </head>
+
+    <body class="project-fixed" style="background:#fff;">
+            <!---->
+
+            <div id="item_header">
+                <a class="datail-banner-head"   href="__APP__/Home/Index/index.html" >
+                    <img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;transform: rotate(180deg);">
+                    <div style="float: left;color:#fff;font-size:1em;margin-left:3px;padding-top: 1px;">返回</div>
+                </a>
+                <div style="margin: auto;width: 57%;margin-top: 12px;text-align: center;color: #fff;">个人中心</div>
+                <a href="" class="detail-banner-mine">
+                    <!--<img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
+                </a>
+            </div>
+            <div style="margin-top: 43px;">
+                <div class="axc-console axc-error" id="axc-error">
+                    <i class="axc-base axc-infor-base"></i>
+                    <span></span>
+                </div>
+                <div class="user-lists" >
+                    <div class="user-lists-content">
+                        <div>
+                            <div class="gg" style="text-align:center;">
+                                <img src="{$user.img}" alt="" style="width:80px;height:80px;border-radius:50%;">
+                            </div>
+                            <p style="margin-top:0;text-align:center;line-height:25px;color:#333;">{$user.nickname}</p>
+                            <p style="margin-top:0;text-align:center;line-height:25px;color:#333;">
+
+                                <span style="width:100%;display: inline-block">书币:{$user.gold}</span>
+                                <if condition="$user['vip'] heq '2'">
+                                <span style="width:100%;display: inline-block;color:red;">会员有效期:{$user.viptime|date="Y-m-d",###}</span>
+                                </if>
+                            </p>
+                        </div>
+                        <div class="gg-g">
+                            <ul>
+                                <div style="width:100%;overflow:hidden;border-bottom:1px solid #bfbfbf;">
+                                    <!-- <a href="" style="width:33%;float:left;border-bottom:none;">
+                                        <li class="gg-li" >
+                                            <div style="width:25%;margin:0 auto;">
+                                                <img src="__PUBLIC__/home/img/cc.png" alt="" style="width:40px;height:40px;margin:0 auto;vertical-align: middle;">
+                                            </div>
+                                            微信授权登录
+                                        </li>
+                                    </a> -->
+                                    <a href="__APP__/Home/Book/book_hot.html" style="width:33%;float:left;border-bottom:none;">
+                                        <li class="gg-li" >
+                                            <div style="width:33%;margin:0 auto;">
+                                                <img src="__PUBLIC__/home/img/cc1.png" alt="" style="width:30px;height:30px;margin:0 auto;vertical-align: middle;margin-top:10px;">
+                                            </div>
+                                            热门
+                                        </li>
+                                    </a>
+                                    <a href="__APP__/Home/User/bookmark.html" style="width:33%;float:left;border-bottom:none;">
+                                        <li class="gg-li" >
+                                            <div style="width:33%;margin:0 auto;">
+                                                <img src="__PUBLIC__/home/img/cc2.png" alt="" style="width:30px;height:30px;margin:0 auto;vertical-align: middle;margin-top:10px;">
+                                            </div>
+                                            书签
+                                        </li>
+                                    </a>
+                                    <a href="__APP__/Home/Index/recharge.html" style="width:33%;float:left;border-bottom:none;">
+                                        <li class="gg-li2" >
+                                            <div style="width:33%;margin:0 auto;">
+                                                <img src="__PUBLIC__/home/img/cc3.png" alt="" style="width:30px;height:30px;margin:0 auto;vertical-align: middle;margin-top:10px;">
+                                            </div>
+                                            充值
+                                        </li>
+                                    </a>
+                                </div>
+                                <div style="width:100%;overflow:hidden;border-bottom:1px solid #bfbfbf;">
+
+                                    <a href="__APP__/Home/Book/book_type.html" style="width:33%;float:left;border-bottom:none;">
+                                        <li class="gg-li" >
+                                            <div style="width:33%;margin:0 auto;">
+                                                <img src="__PUBLIC__/home/img/cc4.png" alt="" style="width:30px;height:30px;margin:0 auto;vertical-align: middle;margin-top:10px;">
+                                            </div>
+                                            书架
+                                        </li>
+                                    </a>
+                                    <a href="__APP__/Home/User/search.html" style="width:33%;float:left;border-bottom:none;">
+                                        <li class="gg-li" >
+                                            <div style="width:33%;margin:0 auto;">
+                                                <img src="__PUBLIC__/home/img/cc5.png" alt="" style="width:30px;height:30px;margin:0 auto;vertical-align: middle;margin-top:10px;">
+                                            </div>
+                                            搜索
+                                        </li>
+                                    </a>
+                                    <a href="__APP__/Home/User/history.html" style="width:33%;float:left;border-bottom:none;">
+                                        <li class="gg-li2" >
+                                            <div style="width:33%;margin:0 auto;">
+                                                <img src="__PUBLIC__/home/img/cc6.png" alt="" style="width:30px;height:30px;margin:0 auto;vertical-align: middle;margin-top:10px;">
+                                            </div>
+                                            阅读历史
+                                        </li>
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+    </body>
+
+</html>

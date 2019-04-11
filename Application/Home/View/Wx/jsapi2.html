@@ -1,0 +1,181 @@
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">
+
+    <title></title>
+
+    <script type="text/javascript">
+
+	//调用微信JS api 支付
+
+	function jsApiCall()
+
+	{
+
+		WeixinJSBridge.invoke(
+
+			'getBrandWCPayRequest',
+
+			<?php echo $jsApiParameters; ?>,
+
+			function(res){
+
+				WeixinJSBridge.log(res.err_msg);
+
+				 //alert(res.err_msg);
+
+
+				if(res.err_msg=='get_brand_wcpay_request:ok'){
+				//location.href="http://1.mbzgq.com/index.php/Home/Index/index.html";
+				location.href="http://{$jumpurl}/index.php/Home/Index/index.html";
+
+				}else{
+					//location.href="http://1.mbzgq.com/index.php/Home/User/center.html";
+					location.href="http://{$jumpurl}/index.php/Home/User/center.html";
+				}
+			}
+
+		);
+
+	}
+
+
+
+	function callpay()
+
+	{
+
+		if (typeof WeixinJSBridge == "undefined"){
+
+		    if( document.addEventListener ){
+
+		        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+
+		    }else if (document.attachEvent){
+
+		        document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+
+		        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+
+		    }
+
+		}else{
+
+		    jsApiCall();
+
+		}
+
+	}
+
+	</script>
+
+	<script type="text/javascript">
+
+	//获取共享地址
+
+	function editAddress()
+
+	{
+
+		WeixinJSBridge.invoke(
+
+			'editAddress',
+
+			<?php echo $editAddress; ?>,
+
+			function(res){
+
+				var value1 = res.proviceFirstStageName;
+
+				var value2 = res.addressCitySecondStageName;
+
+				var value3 = res.addressCountiesThirdStageName;
+
+				var value4 = res.addressDetailInfo;
+
+				var tel = res.telNumber;
+
+
+
+				alert(value1 + value2 + value3 + value4 + ":" + tel);
+
+			}
+
+		);
+
+	}
+
+
+
+	window.onload = function(){
+
+		if (typeof WeixinJSBridge == "undefined"){
+
+		    if( document.addEventListener ){
+
+		        document.addEventListener('WeixinJSBridgeReady', editAddress, false);
+
+		    }else if (document.attachEvent){
+
+		        document.attachEvent('WeixinJSBridgeReady', editAddress);
+
+		        document.attachEvent('onWeixinJSBridgeReady', editAddress);
+
+		    }
+
+		}else{
+
+			editAddress();
+
+		}
+
+	};
+
+
+
+	</script>
+
+</head>
+
+<body>
+ <div id="item_header">
+                <!-- <a href="__URL__/index.html" onClick="javascript :history.back(-1);" class="datail-banner-head" > -->
+                    <img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 15px;height: 18px;width: 18px;padding-bottom: 0;transform: rotate(180deg);">
+                    <div style="float: left;color:#fff;font-size:1em;margin-left:3px;padding-top: 10px;">返回</div>
+                <!-- </a> -->
+                <div style="margin: auto;width: 57%;margin-top: 12px;text-align: center;color: #fff;"></div>
+                <a href="" class="detail-banner-mine">
+                    <!--<img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
+                </a>
+            </div>
+             <br/><br/>
+
+
+
+
+  <div class="yu" style="text-align: center;height:60px;font-size:18px;border:0px;">
+  					<div style="width:100%;height:230px">
+  						<img src="__PUBLIC__/home/img/3312.png" alt="" style="width:50%;height:auto">
+  						</div>
+                           当前充值金额：<span style="color:#fe8a01;">{$tol}</span>  元<br>
+                            <!-- 可获得：<span style="color:#fe8a01;">5000000000</span>书币 -->
+                        </div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   <!--   <font color="#9ACD32"><b>该笔订单支付金额为<span style="color:#f00;font-size:50px"><{$tole}>元</span>钱</b></font> <br/><br/> -->
+
+	<div align="center">
+
+		<button style="width:210px; height:50px; border-radius: 15px;background-color:#02C88D; border:0px #02C88D solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
+
+	</div>
+
+</body>
+
+</html>

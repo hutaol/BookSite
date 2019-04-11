@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <title>历史记录</title>
+        <meta property="qc:admins" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">
+        <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
+        <!-- <script>
+            var BASE_URL = "/projects";
+        </script> -->
+    </head>
+
+    <body class="project-fixed" style="background:#fff;">
+            <!---->
+
+            <div id="item_header">
+                <a  class="datail-banner-head" href="__URL__/center.html" >
+                    <img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;transform: rotate(180deg);">
+                    <div style="float: left;color:#fff;font-size:1em;margin-left:3px;padding-top: 1px;">返回</div>
+                </a>
+                <div style="margin: auto;width: 57%;margin-top: 12px;text-align: center;color: #fff;"></div>
+                <a href="" class="detail-banner-mine">
+                    <!--<img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
+                </a>
+            </div>
+            <div style="margin-top: 43px;">
+                <div class="axc-console axc-error" id="axc-error">
+                    <i class="axc-base axc-infor-base"></i>
+                    <span></span>
+                </div>
+                <div class="biao" style="height:30px;">浏览记录</div>
+                <div class="user-lists" >
+                    <div class="user-lists-content">
+                    <volist name="history" id="vh">
+                        <a href="" style="border:none;height:35px;">
+                            <li class="shu">
+                                <div class="shu-div">
+                                    <a href="__APP__/Home/Book/bookinfo?bid={$vh.biid}&number={$vh.number}"><p style="width:85%;float:left;"> {$vh.title}&nbsp;&nbsp;第{$vh.number}章</p></a>
+                                    <a href="__URL__/del_history?id={$vh.id}" style="" class="sd">删除</a>
+                                </div>
+                            </li>
+                        </a>
+                    </volist>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+    </body>
+
+</html>

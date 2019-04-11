@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)https://novel.818tu.com/backend/novels/view/35 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>章节列表</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- <script>
+      (function () {
+        if (window !== window.top) {
+          window.top.location.href = 'http://www.818tu.com';
+        }
+      })();
+    </script> -->
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/bootstrap.min.css">
+    <link href="__PUBLIC__/admin/css/jquery.webui-popover.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/toastr.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/jquery.fileupload.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/select2.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/cc.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/glyphicons-halflings-regular.css">
+    <!-- page specific plugin styles -->
+    <script src="__PUBLIC__/admin/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/admin/js/lodash.min.js"></script>
+    <script src="__PUBLIC__/admin/js/moment.min.js"></script>
+    <script src="__PUBLIC__/admin/js/zh-cn.js"></script>
+    <script src="__PUBLIC__/admin/js/numeral.min.js"></script>
+    <script src="__PUBLIC__/admin/js/toastr.min.js"></script>
+    <script src="__PUBLIC__/admin/js/cookies.js"></script>
+    <script src="__PUBLIC__/admin/js/knockout-min.js"></script>
+    <script src="__PUBLIC__/admin/js/knockout.mapping.min.js"></script>
+    <script src="__PUBLIC__/admin/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="__PUBLIC__/admin/js/clipboard.min.js"></script>
+    <script src="__PUBLIC__/admin/js/select2.min.js"></script>
+    <script src="__PUBLIC__/admin/js/admin.js"></script>
+    <script src="__PUBLIC__/admin/js/K.js"></script>
+
+    <script>
+      moment.locale('zh-cn');
+      toastr.options.positionClass = 'toast-bottom-right';
+    </script>
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/ace-fonts.css">
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/ace.min.css" id="main-ace-style">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="https://novel.818tu.com/static/assets/css/ace-part2.min.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/ace-skins.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/ace-rtl.min.css">
+    <link href="__PUBLIC__/admin/css/jquery.jgrowl.min.css" rel="stylesheet">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="https://novel.818tu.com/static/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/admin.css">
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="__PUBLIC__/admin/js/ace-extra.min.js"></script>
+
+    <!-- <script>
+      var __BASEURL = "https://novel.818tu.com/";
+    </script> -->
+  </head>
+
+  <body class="no-skin" onLoad="init()">
+
+    <!-- #section:basics/navbar.layout -->
+ <include file="./Public/gong/title.html" />
+
+    <div class="main-container" id="main-container">
+      <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+      </script>
+
+      <div id="sidebar" class="sidebar responsive">
+          <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+          </script>
+
+<include file="./Public/gong/list.html" />
+          <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+          </div>
+
+          <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+          </script>
+      </div>
+
+      <!-- /section:basics/sidebar -->
+      <div class="main-content">
+
+             <!--        <div id="invalid-mp-settings-hint" style="border-top: 0px; border-left: 0px; border-right: 0px; margin: 0px;" class="alert alert-warning">
+    <i class="fa fa-warning"></i> 您的公众号配置不完整，推广前请务必配置好公众号信息。<a href="https://novel.818tu.com/backend/settings/mp">立即配置</a>
+</div> -->
+
+<!-- <script>
+    $.get('/backend/settings/api_check_mp_settings?t' + new Date().getTime(), function (result) {
+        if (!result.valid) {
+            $('#invalid-mp-settings-hint').slideDown();
+        }
+    });
+</script> -->
+        <div class="breadcrumbs" id="breadcrumbs">
+          <script type="text/javascript">
+            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+          </script>
+
+          <ul class="breadcrumb">
+            <li>
+              <i class="ace-icon fa fa-home home-icon"></i>
+              <a href="__APP__/Admin/Index/index.html">Home</a>
+            </li>
+            <li class="active">《{$book.title}》</li>
+          </ul><!-- /.breadcrumb -->
+
+          <!-- /section:basics/content.searchbox -->
+        </div>
+
+        <!-- /section:basics/content.breadcrumbs -->
+        <div class="page-content">
+          <div class="page-content-area">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+
+                <!--/span-->
+                <!-- left menu ends -->
+
+
+
+<div class="container-fluid">
+        <div class="row">
+        <div class="col-sm-3">
+            <img src="__PUBLIC__/Uploads/book/{$book.img}" style="max-width:100%;height:280px;width:200px;">
+            <h4>《{$book.title}》</h4>
+            <!-- <div style="line-height: 1.7em;margin-top:10px;" class="text-muted">
+                作者: <br>
+                字数: 815397<br>
+            </div> -->
+            <div class="text-muted" style="margin-top:10px;line-height: 1.7em;">
+                {$book.content}
+            </div>
+        </div>
+        <div class="col-sm-9">
+        <form action="__URL__/edit_book_chanrge" method="POST">
+            <ul class="list-group" style="margin-left:0">
+                <volist name="bookinfo" id="vi">
+                    <li class="list-group-item chapter-item">
+                    <input type="checkbox" name="arr_biid[]"  value="{$vi.id}" autocomplete="off" />
+                                               <!--  <span style="display:inline-block;min-width:26px;">{$vi.number}</span> -->
+                        <a href="" class="chapter-title" data-toggle="view-chapter" data-id="19778">
+                            <!-- 第{$vi.number}章 --> {$vi.title2}
+                        </a>
+
+                        <span style="font-size:12px;margin-left:5px">
+                            <if condition="$vi['pay'] heq '1'">
+                            <span style="color:forestgreen">免费</span>
+                            <else />
+                            <span style="color:red">收费</span>
+                            </if>
+                        </span>
+
+                            <span class="pull-right">
+                                <if condition="$vi['number'] lt '6'">
+                                    <a target="_blank" data-toggle="tooltip" title="" href="__URL__/book_article?id={$vi.id}" data-original-title="文案内容到当前章节，原文链接为下一章">
+                                        <i class="fa fa-link"></i> 生成推广文案
+                                    </a>
+                                    <a title=""  data-bid="{$vi.bid}" data-number="{$vi.number}" data-id="{$vi.id}" data-original-title="原文链接为当前章节" class="creatlink">
+                                        <i class="fa fa-link"></i> 获取推广链接
+                                    </a>
+                                </if>
+                                <if condition="$admin['level'] heq '0'">
+                                    <a title="" href="__URL__/edit_bookinfo?id={$vi.id}"   data-original-title="原文链接为当前章节">
+                                        <i class="fa fa-link"></i> 编辑
+                                    </a>
+                                    <a title="" href="__URL__/del_bookinfo?id={$vi.id}&tid={$book.tid}&bid={$book.id}">
+                                        <i class="fa fa-link"></i> 删除
+                                    </a>
+                                </if>
+                                <!--  <span class="text-success"><i class="fa fa-check-circle"></i> 编辑文章</span> -->
+                            </span>
+                        </li>
+                    </volist>
+                </ul>
+                <div style="border: 1px solid rgb(221, 221, 221);margin-top: -21px;padding: 10px;">
+                  <input type="button" id="btn1" value="全选"> 
+<input type="button" id="btn2" value="取消全选"> 
+                    <input type="text" name="gold" placeholder="点此输入收费金额" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');" />
+                <input type="submit" value="批量修改收费" style="border-radius: 5px;background:#438eb9;color:#fff;width:120px;height:35px"/>
+                </div>
+
+            </form>
+            <!-- <div class="pager"><span class="pager-summary">共 <em>736</em> 条记录, 每页 <em>20</em> 条, 共 <em>37</em> 页</span><ul class="pagination"><li class="active"><a href="https://novel.818tu.com/backend/novels/view/35">1</a></li><li class="page"><a href="https://novel.818tu.com/backend/novels/view/35?page=2" data-ci-pagination-page="2">2</a></li><li class="page"><a href="https://novel.818tu.com/backend/novels/view/35?page=3" data-ci-pagination-page="3">3</a></li><li class="page"><a href="https://novel.818tu.com/backend/novels/view/35?page=4" data-ci-pagination-page="4">4</a></li><li class="page"><a href="https://novel.818tu.com/backend/novels/view/35?page=5" data-ci-pagination-page="5">5</a></li><li class="page"><a href="https://novel.818tu.com/backend/novels/view/35?page=6" data-ci-pagination-page="6">6</a></li><li class="next page"><a href="https://novel.818tu.com/backend/novels/view/35?page=2" data-ci-pagination-page="2" rel="next"> ›</a></li><li class="next page"><a href="https://novel.818tu.com/backend/novels/view/35?page=37" data-ci-pagination-page="37">末页 »</a></li></ul></div>       -->
+        </div>
+    </div>
+</div>
+
+<div id="big" style="display:none;">
+    <div class="big-div">
+        <div class="bb">
+            <div class="bb-div">
+                <button type="button" class="close" style="margin-top:10px;margin-right:20px;"><span style="font-size:28px;">x</span></button>
+
+                <h4 >推广链接生成成功</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    请复制下方推广链接，后续您可以在后台菜单的"推广链接"中找到它并查看统计数据:
+                </div>
+                <div style="margin:10px 0;" id="fe_text">
+                    http://
+                </div>
+                <div style="margin:10px 0;color:red;font-weight:bold;">
+                    <i class="fa fa-info-circle"></i>
+                     请务必使用此链接作为文案的原文链接，不要使用微信中点开后手工复制的链接
+                </div>
+            </div>
+            <div class="modal-footer" id="clip_container">
+                <button type="button" class="btn btn-primary"  id="d_clip_button" >复制链接</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  
+  $("#btn1").click(function(){ 
+$("input[name='arr_biid[]']").attr("checked","true"); 
+})
+  
+  $("#btn2").click(function(){ 
+$("input[name='arr_biid[]']").removeAttr("checked"); 
+}) 
+  
+$('.creatlink').click(function(event) {
+    var bid = $(this).data('bid');
+    var number = $(this).data('number');
+    var id = $(this).data('id');
+    $.get('__URL__/creatlinks',{'bid':bid,'number':number,'id':id},function(data) {
+        if(data == 'false')
+        {
+            alert('生成失败，请重试');
+        }else{
+            //alert(data);
+            $('#big').css('display','block');
+            $('#fe_text').html(data);
+        }
+        //alert(1);
+    });
+    //alert(id);
+});
+$('.close').click(function(event) {
+    $('#big').css('display','none');
+});
+
+</script>
+
+<!-- js复制内容 -->
+
+<script type="text/javascript">
+$("#d_clip_button").click(function(){
+    var $div = $('#fe_text').html();
+    var str = $div;
+    K.Tool.copy(str.replace(/&amp;/g,"&"))
+});
+
+</script>
+
+<div id="view-chapter-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="chapter-content" style="overflow: auto; height: 478px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-toggle="view-chapter" class="btn btn-default btn-prev-chapter">上一章</button>
+                <button type="button" data-toggle="view-chapter" class="btn btn-primary btn-next-chapter">下一章</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- <script>
+    $(function () {
+        $('[data-toggle="tooltip"], [data-toggle="create-referral-link"]').tooltip();
+
+        $('#view-chapter-modal .chapter-content').css('height', Math.floor($(window).height() * 0.75) + 'px');
+
+        $(document).on('click', '[data-toggle="view-chapter"]', function () {
+            var id = $(this).data('id');
+            viewChapter(id);
+            return false;
+        });
+
+        $(document).on('click', '[data-toggle="set-force-follow-chapter"]', function () {
+            var id = $(this).data('article-id');
+            var isPaidArticle = $(this).data('is-paid-article');
+
+            var promise = null;
+
+            if (isPaidArticle) {
+                promise = Modal.confirm({
+                    title: '设置关注章节',
+                    message: '<span style="color:red">设置收费章节为关注章节可能导致低关注率，确定要设置吗?</span>'
+                });
+            } else {
+                promise = $.Deferred().resolve();
+            }
+
+            promise.then(function () {
+                $.ajax({
+                    url: '/backend/articles/api_set_force_follow_chapter/' + id,
+                    type: 'POST',
+                    contentType: 'application/json'
+                })
+                    .then(function () {
+                        toastr.success('设置成功');
+                        reloadPage(500);
+                    })
+                    .fail(handleAjaxError);
+            });
+
+            return false;
+        });
+
+        $(document).on('click', '[data-toggle="delete-article"]', function () {
+            var $item = $(this).closest('.chapter-item');
+            var id = $(this).data('id');
+            var title = $item.find('.chapter-title').text().trim();
+            if (!confirm('确定要删除章节《' + title + '》吗?')) {
+                return false;
+            }
+
+            $.ajax({
+                url: '/backend/articles/api_delete/' + id,
+                type: 'POST',
+                contentType: 'application/json'
+            })
+                .then(function () {
+                    toastr.success('删除成功');
+                    reloadPage(500);
+                })
+                .fail(handleAjaxError);
+
+            return false;
+        });
+
+        function viewChapter(id) {
+            var $current = $('.list-group-item [data-toggle="view-chapter"][data-id="' + id + '"]');
+            var prevId = $current.closest('li').prev().find('[data-toggle="view-chapter"]').data('id');
+            var nextId = $current.closest('li').next().find('[data-toggle="view-chapter"]').data('id');
+
+            $.get('/backend/novels/api_get_chapter', { id: id }, function (data) {
+                var html = _.map(data.paragraphs, function (it) {
+                    return '<p>' + it + '</p>';
+                })
+                    .join('');
+
+                $('#view-chapter-modal .modal-title').html(data.title);
+                $('#view-chapter-modal .chapter-content').html(html);
+
+                var $prevButton = $('#view-chapter-modal .btn-prev-chapter');
+                var $nextButton = $('#view-chapter-modal .btn-next-chapter');
+
+                if (prevId) {
+                    $prevButton.data('id', prevId).show();
+                } else {
+                    $prevButton.hide();
+                }
+
+                if (nextId) {
+                    $nextButton.data('id', nextId).show();
+                } else {
+                    $nextButton.hide();
+                }
+
+                $('#view-chapter-modal').modal('show');
+            });
+        }
+    })
+</script> -->
+
+                                <!-- PAGE CONTENT ENDS -->
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.page-content-area -->
+                </div><!-- /.page-content -->
+            </div><!-- /.main-content -->
+
+        </div><!-- /.main-container -->
+
+        <!-- basic scripts -->
+
+       <!--  <script type="text/javascript">
+            if('ontouchstart' in document.documentElement) document.write("<script src='https://novel.818tu.com/static/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+        </script> -->
+        <script src="__PUBLIC__/admin/js/bootstrap.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.webui-popover.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.ui.widget.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.fileupload.min.js"></script>
+
+        <!-- page specific plugin scripts -->
+
+        <!-- ace scripts -->
+        <script src="__PUBLIC__/admin/js/ace-elements.min.js"></script>
+        <script src="__PUBLIC__/admin/js/ace.min.js"></script>
+
+        <!-- inline scripts related to this page -->
+
+        <!-- the following scripts are used in demo only for onpage help and you don't need them -->
+        <link rel="stylesheet" href="__PUBLIC__/admin/css/ace.onpage-help.css">
+
+    <!--     <script type="text/javascript"> ace.vars['base'] = 'https://novel.818tu.com/static'; </script> -->
+        <script src="__PUBLIC__/admin/js/elements.onpage-help.js"></script>
+        <script src="__PUBLIC__/admin/js/ace.onpage-help.js"></script>
+
+
+</body></html>

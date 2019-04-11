@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>用户统计</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- <script>
+      (function () {
+        if (window !== window.top) {
+          window.top.location.href = 'http://www.818tu.com';
+        }
+      })();
+    </script> -->
+
+    <!-- bootstrap & fontawesome -->
+
+
+
+
+
+
+
+
+    <!-- page specific plugin styles -->
+    <script src="__PUBLIC__/admin/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/admin/js/lodash.min.js"></script>
+    <script src="__PUBLIC__/admin/js/moment.min.js"></script>
+    <script src="__PUBLIC__/admin/js/zh-cn.js"></script>
+    <script src="__PUBLIC__/admin/js/numeral.min.js"></script>
+    <script src="__PUBLIC__/admin/js/toastr.min.js"></script>
+    <script src="__PUBLIC__/admin/js/cookies.js"></script>
+    <script src="__PUBLIC__/admin/js/knockout-min.js"></script>
+    <script src="__PUBLIC__/admin/js/knockout.mapping.min.js"></script>
+    <script src="__PUBLIC__/admin/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="__PUBLIC__/admin/js/clipboard.min.js"></script>
+    <script src="__PUBLIC__/admin/js/select2.min.js"></script>
+    <script src="__PUBLIC__/admin/js/admin.js"></script>
+    <script>
+      moment.locale('zh-cn');
+      toastr.options.positionClass = 'toast-bottom-right';
+    </script>
+
+    <!-- text fonts -->
+
+
+    <!-- ace styles -->
+
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="http://novel.818tu.com/static/assets/css/ace-part2.min.css" />
+    <![endif]-->
+
+
+
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="http://novel.818tu.com/static/css/ace-ie.min.css" />
+    <![endif]-->
+
+
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="__PUBLIC__/admin/js/ace-extra.min.js"></script>
+
+<!--     <script>
+      var __BASEURL = "http://novel.818tu.com/";
+    </script> -->
+
+<link media="all" href="__PUBLIC__/admin/css/index02.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/glyphicons-halflings-regular.css">
+</head>
+<body class="no-skin">
+
+    <!-- #section:basics/navbar.layout -->
+    <include file="./Public/gong/title.html" />
+
+    <div class="main-container" id="main-container">
+      <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+      </script>
+
+      <div id="sidebar" class="sidebar responsive">
+          <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+          </script>
+
+<include file="./Public/gong/list.html" />
+          <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+          </div>
+
+          <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+          </script>
+      </div>
+
+      <!-- /section:basics/sidebar -->
+      <div class="main-content">
+
+             <!--        <div id="invalid-mp-settings-hint" style="border-top: 0px none; border-left: 0px none; border-right: 0px none; margin: 0px;" class="alert alert-warning">
+    <i class="fa fa-warning"></i> 您的公众号配置不完整，推广前请务必配置好公众号信息。<a    href="#">立即配置</a>
+</div> -->
+
+<!-- <script>
+    $.get('/backend/settings/api_check_mp_settings?t' + new Date().getTime(), function (result) {
+        if (!result.valid) {
+            $('#invalid-mp-settings-hint').slideDown();
+        }
+    });
+</script> -->
+        <div class="breadcrumbs" id="breadcrumbs">
+          <script type="text/javascript">
+            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+          </script>
+
+          <ul class="breadcrumb">
+            <li>
+              <i class="ace-icon fa fa-home home-icon"></i>
+              <a    href="__APP__/Admin/Index/index.html">Home</a>
+            </li>
+            <li class="active">用户统计</li>
+          </ul><!-- /.breadcrumb -->
+
+          <!-- /section:basics/content.searchbox -->
+        </div>
+
+        <!-- /section:basics/content.breadcrumbs -->
+        <div class="page-content">
+          <div class="page-content-area">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+
+                <!--/span-->
+                <!-- left menu ends -->
+
+
+
+<div style="margin-bottom: 10px;">
+    <ul class="nav nav-tabs">
+        <li class=""><a    href="__URL__/chanrge_static.html">订单统计</a></li>
+        <li class="active"><a    href="__URL__/people_static.html">用户统计</a></li>
+        <li style="display: none;" class=""><a    href="#">小说统计</a></li>
+    </ul>
+</div>
+<script>
+    var uid = null;
+</script>
+
+<div class="row" id="member-summary-stats-panel">
+    <div class="col-md-3">
+        <div class="well">
+            <b>
+                今日新增
+                <!-- <span style="font-weight: normal; font-size: 13px; color: rgb(0, 153, 0);" class="pull-right">
+                    <span data-bind="text: refresh_seconds_left">55</span> 秒后刷新
+                </span> -->
+            </b>
+            <div class="text-primary" style="font-size: 32px; margin: 5px 0px;">
+                <span data-bind="text: stats_today.new_member_count">{$today_people3}</span>
+                <div style="font-size: 13px;" class="text-muted">
+                    <b class="text-warning" data-bind="text: stats_today.male_count">{$today_people1}</b> 男性,
+                    <b class="text-warning" data-bind="text: stats_today.female_count">{$today_people2}</b> 女性
+                    <!-- <b class="text-warning" title="用户未设置性别或未关注而无法获取性别" data-bind="text: stats_today.new_member_count() - stats_today.male_count() - stats_today.female_count()">0</b> 未知 -->
+                </div>
+            </div>
+            <div>
+                                    <div>
+                        已关注:
+                        <b class="text-warning">
+                            <span data-bind="text: stats_today.subscribed_count">{$today_people_gz}</span>
+                            (<span data-bind="text: Math.round(stats_today.subscribe_rate() * 100)">{$today_people_gz/$today_people3*100|round=2}</span>%)
+                        </b>
+                    </div>
+                                <div>
+                    已付费:
+                    <b class="text-warning">
+                        <span data-bind="text: stats_today.paid_count">{$today_people_ps}</span>
+                                                (<span data-bind="text: Math.round(stats_today.pay_rate() * 100)">{$today_people_ps/$today_people3*100|round=2}</span>%)
+                                            </b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="well">
+            <b>昨日新增</b>
+            <div class="text-primary" style="font-size: 32px; margin: 5px 0px;">
+                <span data-bind="text: stats_yesterday.new_member_count">{$yes_people3}</span>
+                <div style="font-size: 13px;" class="text-muted">
+                    <b class="text-warning" data-bind="text: stats_yesterday.male_count">{$yes_people1}</b> 男性,
+                    <b class="text-warning" data-bind="text: stats_yesterday.female_count">{$yes_people2}</b> 女性
+                   <!--  <b class="text-warning" title="用户未设置性别或未关注而无法获取性别" data-bind="text: stats_yesterday.new_member_count() - stats_yesterday.male_count() - stats_yesterday.female_count()">0</b> 未知 -->
+                </div>
+            </div>
+            <div>
+                                    <div>
+                        已关注:
+                        <b class="text-warning">
+                            <span data-bind="text: stats_yesterday.subscribed_count">{$yes_people_gz}</span>
+                            (<span data-bind="text: Math.round(stats_yesterday.subscribe_rate() * 100)">{$yes_people_gz/$yes_people3*100|round=2}</span>%)
+                        </b>
+                    </div>
+                                <div>
+                    已付费:
+                    <b class="text-warning">
+                        <span data-bind="text: stats_yesterday.paid_count">{$yes_people_ps}</span>
+                                                (<span data-bind="text: Math.round(stats_yesterday.pay_rate() * 100)">{$yes_people_ps/$yes_people3*100|round=2}</span>%)
+                                            </b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="well">
+            <b>本月新增  </b>
+            <div class="text-primary" style="font-size: 32px; margin: 5px 0px;">
+                <span data-bind="text: stats_this_month.new_member_count">{$month_people3}</span>
+                <div style="font-size: 13px;" class="text-muted">
+                    <b class="text-warning" data-bind="text: stats_this_month.male_count">{$month_people1}</b> 男性,
+                    <b class="text-warning" data-bind="text: stats_this_month.female_count">{$month_people2}</b> 女性
+                    <!-- <b class="text-warning" title="用户未设置性别或未关注而无法获取性别" data-bind="text: stats_this_month.new_member_count() - stats_this_month.male_count() - stats_this_month.female_count()">0</b> 未知 -->
+                </div>
+            </div>
+            <div>
+                                    <div>
+                        已关注:
+                        <b class="text-warning">
+                            <span data-bind="text: stats_this_month.subscribed_count">{$month_people_gz}</span>
+                            (<span data-bind="text: Math.round(stats_this_month.subscribe_rate() * 100)">{$month_people_gz/$month_people3*100|round=2}</span>%)
+                        </b>
+                    </div>
+                                <div>
+                    已付费:
+                    <b class="text-warning">
+                        <span data-bind="text: stats_this_month.paid_count">{$month_people_ps}</span>
+                                                (<span data-bind="text: Math.round(stats_this_month.pay_rate() * 100)">{$month_people_ps/$month_people3*100|round=2}</span>%)
+                                            </b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="well">
+            <b>所有时间 </b>
+            <div class="text-primary" style="font-size: 32px; margin: 5px 0px;">
+                <span data-bind="text: stats_all_time.new_member_count">{$all_people3}</span>
+                <div style="font-size: 13px;" class="text-muted">
+                    <b class="text-warning" data-bind="text: stats_all_time.male_count">{$all_people1}</b> 男性,
+                    <b class="text-warning" data-bind="text: stats_all_time.female_count">{$all_people2}</b> 女性
+                    <!-- <b class="text-warning" title="用户未设置性别或未关注而无法获取性别" data-bind="text: stats_all_time.new_member_count() - stats_all_time.male_count() - stats_all_time.female_count()">0</b> 未知 -->
+                </div>
+            </div>
+            <div>
+                                    <div>
+                        已关注:
+                        <b class="text-warning">
+                            <span data-bind="text: stats_all_time.subscribed_count">{$all_people_gz}</span>
+                            (<span data-bind="text: Math.round(stats_all_time.subscribe_rate() * 100)">{$all_people_gz/$all_people3*100|round=2}</span>%)
+                        </b>
+                    </div>
+                                <div>
+                    已付费:
+                    <b class="text-warning">
+                        <span data-bind="text: stats_all_time.paid_count">{$all_people_ps}</span>
+                                                (<span data-bind="text: Math.round(stats_all_time.pay_rate() * 100)">{$all_people_ps/$all_people3*100|round=2}</span>%)
+                                            </b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+    var MemberSummaryStatsPanel = function () {
+        var self = this;
+        var inited = false;
+        var uid = null;
+        var countdownIntervalId = null;
+        var refreshIntervalSeconds = 60;
+        var model = {
+            refresh_seconds_left: ko.observable(refreshIntervalSeconds),
+            stats_today: createStats(),
+            stats_this_month: createStats(),
+            stats_yesterday: createStats(),
+            stats_all_time: createStats()
+        };
+
+        this.init = function () {
+            if (!inited) {
+                ko.applyBindings(model, document.getElementById('member-summary-stats-panel'));
+                inited = false;
+            }
+        };
+
+        this.load = function (options) {
+            self.init();
+
+            uid = options && options.uid ? options.uid : null;
+
+            $.when(
+                self.loadStatsToday(),
+                self.loadStatsYesterday(),
+                self.loadStatsThisMonth(),
+                self.loadStatsAllTime()
+            )
+            .then(function () {
+                self.startRefreshTimer();
+            });
+        };
+
+        this.startRefreshTimer = function () {
+            countdownIntervalId = setInterval(function () {
+                model.refresh_seconds_left(model.refresh_seconds_left() - 1);
+
+                if (model.refresh_seconds_left() === 0) {
+                    clearInterval(countdownIntervalId);
+                    self.loadStatsToday().then(function () {
+                        model.refresh_seconds_left(refreshIntervalSeconds);
+                        self.startRefreshTimer();
+                    });
+                }
+            }, 1000);
+        };
+
+        this.loadStatsToday = function () {
+            return $.get('/backend/member_stats/api_get_stats_today/' + (uid || ''), function (data) {
+               ko.mapping.fromJS(data, {}, model.stats_today);
+            });
+        };
+
+        this.loadStatsYesterday = function () {
+            return $.get('/backend/member_stats/api_get_stats_yesterday/' + (uid || ''), function (data) {
+               ko.mapping.fromJS(data, {}, model.stats_yesterday);
+            });
+        };
+
+        this.loadStatsThisMonth = function () {
+            return $.get('/backend/member_stats/api_get_stats_this_month/' + (uid || ''), function (data) {
+               ko.mapping.fromJS(data, {}, model.stats_this_month);
+            });
+        };
+
+        this.loadStatsAllTime = function () {
+            return $.get('/backend/member_stats/api_get_stats_all_time/' + (uid || ''), function (data) {
+               ko.mapping.fromJS(data, {}, model.stats_all_time);
+            });
+        };
+
+        function createStats() {
+            return {
+                new_member_count: ko.observable(),
+                subscribed_count: ko.observable(),
+                paid_count: ko.observable(),
+                male_count: ko.observable(),
+                female_count: ko.observable(),
+                subscribe_rate: ko.observable(),
+                pay_rate: ko.observable()
+            }
+        }
+    };
+
+    MemberSummaryStatsPanel.instance = new MemberSummaryStatsPanel();
+</script> -->
+<div class="panel panel-default" id="member-daily-stats-panel">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-calendar"></i> 近30天用户统计</h3>
+    </div>
+    <!-- <div class="loading-panel" data-bind="visible: loading" style="display: none;">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div> -->
+    <table class="table table-bordered table-striped" data-bind="visible: !loading()" style="">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th class="text-right">新增用户</th>
+                                    <th class="text-right">已关注</th>
+                                <th class="text-right">已付费</th>
+                <th class="text-right">男性</th>
+                <th class="text-right">女性</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: stats">
+            <volist name="arr" id="vr">
+            <tr>
+                <td>
+                    <span data-bind="date: date">{$vr.time}</span>
+                </td>
+                <td class="text-right">
+                    <span data-bind="text: new_member_count">{$vr.join_people}</span>
+                </td>
+                                    <td class="text-right">
+                        <span data-bind="text: subscribed_count">{$vr.join_gz}</span>
+                    </td>
+                                <td class="text-right">
+                    <span data-bind="text: paid_count">{$vr.join_ps}</span>
+                </td>
+                <td class="text-right">
+                    <span data-bind="text: male_count">{$vr.join_man}</span>
+                </td>
+                <td class="text-right">
+                    <span data-bind="text: female_count">{$vr.join_woman}</span>
+                </td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+</div>
+
+<!-- <script>
+    var MemberDailyStatsPanel = function () {
+        var self = this;
+        var inited = false;
+        var model = {
+            loading: ko.observable(true),
+            stats: ko.observableArray()
+        };
+
+        this.init = function () {
+            if (!inited) {
+                ko.applyBindings(model, document.getElementById('member-daily-stats-panel'));
+                inited = true;
+            }
+        };
+
+        this.load = function (options) {
+            self.init();
+
+            model.loading(true);
+
+            var uid = options && options.uid ? options.uid : null;
+
+            $.get('/backend/member_stats/api_get_daily_stats/' + (uid || ''), function (stats) {
+                model.stats(stats);
+                model.loading(false);
+            });
+        }
+    };
+
+    MemberDailyStatsPanel.instance = new MemberDailyStatsPanel();
+</script>
+<script>
+    $(function () {
+       MemberSummaryStatsPanel.instance.load({
+           uid: uid
+       });
+
+       MemberDailyStatsPanel.instance.load({
+           uid: uid
+       });
+    });
+</script> -->
+
+
+                                <!-- PAGE CONTENT ENDS -->
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.page-content-area -->
+                </div><!-- /.page-content -->
+            </div><!-- /.main-content -->
+
+        </div><!-- /.main-container -->
+
+        <!-- basic scripts -->
+
+        <!-- <script type="text/javascript">
+            if('ontouchstart' in document.documentElement) document.write("<script src='http://novel.818tu.com/static/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+        </script> -->
+        <script src="__PUBLIC__/admin/js/bootstrap.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.webui-popover.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.ui.widget.min.js"></script>
+        <script src="__PUBLIC__/admin/js/jquery.fileupload.min.js"></script>
+
+        <!-- page specific plugin scripts -->
+
+        <!-- ace scripts -->
+        <script src="__PUBLIC__/admin/js/ace-elements.min.js"></script>
+        <script src="__PUBLIC__/admin/js/ace.min.js"></script>
+
+        <!-- inline scripts related to this page -->
+
+        <!-- the following scripts are used in demo only for onpage help and you don't need them -->
+
+
+      <!--   <script type="text/javascript"> ace.vars['base'] = 'http://novel.818tu.com/static'; </script> -->
+        <script src="__PUBLIC__/admin/js/elements.onpage-help.js"></script>
+        <script src="__PUBLIC__/admin/js/ace.onpage-help.js"></script>
+
+
+</body>
+</html>
