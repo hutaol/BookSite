@@ -6,16 +6,16 @@ class IndexController extends Controller
 {
     public function index()
     {
-        // $this->checklogin();
+//        $this->checklogin();
         $this->checkvip();
         $u = M('user');
         $user = $u->where(array('id' => $_SESSION['id']))->find();
         $this->assign('nickname', $user['nickname']);
         $this->assign('img', $user['img']);
         $b = M('book');
-        $book1 = $b->where(array('eic' => 2))->limit(1)->find();
-        $book2 = $b->where(array('eic' => 2))->limit(1, 1)->select();
-        $book3 = $b->where(array('eic' => 2))->limit(2, 2)->select();
+        $book1 = $b->where(array('hot' => 2))->limit(1)->find();
+        $book2 = $b->where(array('hot' => 2))->limit(1, 1)->select();
+        $book3 = $b->where(array('hot' => 2))->limit(2, 2)->select();
         $this->assign('book1', $book1);
         $this->assign('book2', $book2[0]);
         $this->assign('book3', $book3[0]);
@@ -45,6 +45,7 @@ class IndexController extends Controller
         $this->assign('bookwoman3', $bookwoman3[0]);
         $this->assign('bookwoman4', $bookwoman4[0]);
         $this->assign('bookwoman5', $bookwoman5[0]);
+
         $this->assign('bookwoman6', $bookwoman6[0]);
         $this->assign('bookwoman', $bookwoman);
         $h = M('history');
@@ -113,7 +114,7 @@ class IndexController extends Controller
     }
     public function recharge_promotion()
     {
-        $this->checklogin();
+//        $this->checklogin();
         $pr = M('promotion');
         $prom = $pr->where(array('id' => $_GET['pid'], 'st' => 2))->find();
         if (!$prom) {
@@ -150,6 +151,8 @@ class IndexController extends Controller
             $this->error('数据异常，请重试');
         }
     }
+
+    // 微信授权回调
     public function index1()
     {
         if ($_GET['code']) {
@@ -210,9 +213,28 @@ class IndexController extends Controller
     public function checklogin()
     {
         if (empty($_SESSION['id'])) {
+
+            if (C('CHECK_LOGIN') == '0') {
+                $u = M('user');
+
+                $w['openid'] = 'oiYLe0pszqZ3K2x9cV8TCrW9uHWo';
+                $w['nickname'] = 'test';
+                $w['img'] = 'http://thirdwx.qlogo.cn/mmopen/vi_32/6nUoyZqMVr2jKxQVbNFFaVzapWBpqzHicQux8oCd9ibxwtLeBamYHFF8WNFXPXVbfpEkKue5GZ4O9FL7cPyOeEiag/132';
+                $w['gold'] = 0;
+                $w['vip'] = 1;
+                $w['sex'] = '1';
+                $uid = $u->add($w);
+                $_SESSION['id'] = $uid;
+                cookie('id', $uid);
+                $this->redirect('Index/index');
+
+                return;
+            }
+
             $wc = M('wechat');
             $wechat = $wc->where(array('weburl' => $_SERVER['HTTP_HOST']))->find();
             $appid = $wechat['appid'];
+            echo($appid);
             $lenurl = 'http://' . $wechat['weburl'] . '/Home/Index/index1.html';
             $encurl = urlencode($lenurl);
             $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $appid . '&redirect_uri=' . $encurl . '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';

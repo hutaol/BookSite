@@ -441,6 +441,24 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
     }
     public function checklogin()
     {
+
+        if (C('CHECK_LOGIN') == '0') {
+            $u = M('user');
+
+            $w['openid'] = 'oiYLe0pszqZ3K2x9cV8TCrW9uHWo';
+            $w['nickname'] = 'test';
+            $w['img'] = 'http://thirdwx.qlogo.cn/mmopen/vi_32/6nUoyZqMVr2jKxQVbNFFaVzapWBpqzHicQux8oCd9ibxwtLeBamYHFF8WNFXPXVbfpEkKue5GZ4O9FL7cPyOeEiag/132';
+            $w['gold'] = 0;
+            $w['vip'] = 1;
+            $w['sex'] = '1';
+            $uid = $u->add($w);
+            $_SESSION['id'] = $uid;
+            cookie('id', $uid);
+            $this->redirect('Index/index');
+
+            return;
+        }
+
         if (empty($_SESSION['id'])) {
             $id = cookie('id');
             if (empty($id)) {

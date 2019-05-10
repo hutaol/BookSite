@@ -163,6 +163,17 @@
         <b class="arrow"></b>
     </li>
 </if>
+
+    <if condition="$admin['level'] heq '0'">
+        <li>
+            <a    href="__APP__/Admin/Index/index_set.html">
+                <i class="menu-icon fa fa-fw fa-gears"></i>
+                <span class="menu-text">网站主页设置</span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+    </if>
+
 <if condition="$admin['level'] heq '0'">
     <li>
         <a    href="__APP__/Admin/User/do_all_deposit">

@@ -280,7 +280,7 @@ class UserController extends Controller
     }
     public function deposit_record()
     {
-        $this->checklogin();
+//        $this->checklogin();
         $admin = $this->checkadmin();
         $this->assign('admin', $admin);
         if (!empty($_GET['time1']) && !empty($_GET['time2'])) {
