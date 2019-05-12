@@ -107,9 +107,9 @@
     /*width: 100%;*/
     overflow: hidden;
     padding: 0 .15rem;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #fff;

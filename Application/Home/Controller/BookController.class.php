@@ -183,7 +183,12 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
 
     }
 
-
+    public function book_list_v1() {
+        $b = M('book');
+        $books = $b->order('id ASC')->select();
+        $this->assign('books', $books);
+        $this->display();
+    }
 
     public function book_list()
     {

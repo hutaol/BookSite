@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -9,11 +9,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no"/>
-    <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/show.css?v1">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/icostyle.css">
-    <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/index1.css">
+    <link rel="stylesheet" href="/book/Public/home/css/amazeui.min.css">
+    <link rel="stylesheet" href="/book/Public/home/css/show.css?v1">
+    <link rel="stylesheet" href="/book/Public/home/css/icostyle.css">
+    <link href="/book/Public/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
+    <link rel="stylesheet" href="/book/Public/home/css/index1.css">
 
     <!-- <script>
         var BASE_URL = "/projects";
@@ -26,7 +26,7 @@
 <div id="item_header" style="height:83px;">
 
     <div class="header_search">
-        <img class="header_search_img" src="__PUBLIC__/home/img/header_search.png">
+        <img class="header_search_img" src="/book/Public/home/img/header_search.png">
         <span>请输入书名搜索</span>
     </div>
 
@@ -45,18 +45,14 @@
 <div style="margin-top: 65px;">
 
     <!--   阅读历史 -->
-    <if condition="!empty($history)">
-        <volist name="history" id="his">
-            <a href="__APP__/Home/Book/bookinfo?bid={$his.biid}&number={$his.number}">
+    <?php if(!empty($history)): if(is_array($history)): $i = 0; $__LIST__ = $history;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$his): $mod = ($i % 2 );++$i;?><a href="/book/Home/Book/bookinfo?bid=<?php echo ($his["biid"]); ?>&number=<?php echo ($his["number"]); ?>">
                 <div class="ss">
                     <div class="ss-div">
-                        <img src="__PUBLIC__/home/img/ss.png" alt="">
-                        上次阅读：{$his.btitle} 第{$his.number}章
+                        <img src="/book/Public/home/img/ss.png" alt="">
+                        上次阅读：<?php echo ($his["btitle"]); ?> 第<?php echo ($his["number"]); ?>章
                     </div>
                 </div>
-            </a>
-        </volist>
-    </if>
+            </a><?php endforeach; endif; else: echo "" ;endif; endif; ?>
 
     <!--轮播图-->
     <div id="html_1">
@@ -67,23 +63,23 @@
     <!--icon title-->
     <div class="items_div">
         <a class="item_a" href="">
-            <img class="item_img" src="__PUBLIC__/home/img/icon_button_sk.png">
+            <img class="item_img" src="/book/Public/home/img/icon_button_sk.png">
             <span>书库</span>
         </a>
         <a class="item_a" href="">
-            <img class="item_img" src="__PUBLIC__/home/img/icon_button_bd.png">
+            <img class="item_img" src="/book/Public/home/img/icon_button_bd.png">
             <span>榜单</span>
         </a>
         <a class="item_a" href="">
-            <img class="item_img" src="__PUBLIC__/home/img/icon_button_wb.png">
+            <img class="item_img" src="/book/Public/home/img/icon_button_wb.png">
             <span>完本</span>
         </a>
         <a class="item_a" href="">
-            <img class="item_img" src="__PUBLIC__/home/img/icon_button_hd.png">
+            <img class="item_img" src="/book/Public/home/img/icon_button_hd.png">
             <span>活动</span>
         </a>
         <a class="item_a" href="">
-            <img class="item_img" src="__PUBLIC__/home/img/icon_button_xm.png">
+            <img class="item_img" src="/book/Public/home/img/icon_button_xm.png">
             <span>限免</span>
         </a>
     </div>
@@ -93,7 +89,7 @@
 
     <!--热门-->
     <div>
-        <a class="section_header" href="__APP__/Home/Book/book_list_v1/weekly.male">
+        <a class="section_header" href="/book/Home/Book/book_list_v1/weekly.male">
             <div class="section_flag_column_line"></div>
             <div class="section_title">
                 <div class="section_left">本周热门</div>
@@ -106,54 +102,54 @@
         <div class="section_content1">
 
                 <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
+                    <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman1["id"]); ?>&number=1">
+                        <img src="/book/Public/Uploads/book/<?php echo ($bookman1["img"]); ?>" alt=""
                              style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">{$bookman1.title}</p>
+                        <p style="margin-top:0;margin-left:10%;" class="rr"><?php echo ($bookman1["title"]); ?></p>
                     </a>
                 </div>
                 <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
+                    <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman2["id"]); ?>&number=1">
+                        <img src="/book/Public/Uploads/book/<?php echo ($bookman2["img"]); ?>" alt=""
                              style="width:80%;border-radius:8px;">
                         <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman3.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman3.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman3.title}</p>
+                            <?php echo ($bookman2["title"]); ?></p>
                     </a>
                 </div>
 
                 <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman4.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman4.img}" alt=""
+                    <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman3["id"]); ?>&number=1">
+                        <img src="/book/Public/Uploads/book/<?php echo ($bookman3["img"]); ?>" alt=""
                              style="width:80%;border-radius:8px;">
                         <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman4.title}</p>
+                            <?php echo ($bookman3["title"]); ?></p>
                     </a>
                 </div>
 
                 <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman5.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman5.img}" alt=""
+                    <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman4["id"]); ?>&number=1">
+                        <img src="/book/Public/Uploads/book/<?php echo ($bookman4["img"]); ?>" alt=""
                              style="width:80%;border-radius:8px;">
                         <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman5.title}</p>
+                            <?php echo ($bookman4["title"]); ?></p>
                     </a>
                 </div>
 
                 <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman6.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman6.img}" alt=""
+                    <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman5["id"]); ?>&number=1">
+                        <img src="/book/Public/Uploads/book/<?php echo ($bookman5["img"]); ?>" alt=""
                              style="width:80%;border-radius:8px;">
                         <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman6.title}</p>
+                            <?php echo ($bookman5["title"]); ?></p>
+                    </a>
+                </div>
+
+                <div class="uu">
+                    <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman6["id"]); ?>&number=1">
+                        <img src="/book/Public/Uploads/book/<?php echo ($bookman6["img"]); ?>" alt=""
+                             style="width:80%;border-radius:8px;">
+                        <p style="margin-top:0;margin-left:10%;" class="rr">
+                            <?php echo ($bookman6["title"]); ?></p>
                     </a>
                 </div>
 
@@ -165,7 +161,7 @@
 
     <!--主编力荐-->
     <div>
-        <a class="section_header" href="__APP__/Home/Book/book_list_v1/recomm.male">
+        <a class="section_header" href="/book/Home/Book/book_list_v1/recomm.male">
             <div class="section_flag_column_line"></div>
             <div class="section_title">
                 <div class="section_left">主编力荐</div>
@@ -178,54 +174,54 @@
         <div class="section_content1">
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman1["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman1["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
-                    <p style="margin-top:0;margin-left:10%;" class="rr">{$bookman1.title}</p>
+                    <p style="margin-top:0;margin-left:10%;" class="rr"><?php echo ($bookman1["title"]); ?></p>
                 </a>
             </div>
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman2["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman2["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
-                </a>
-            </div>
-
-            <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                         style="width:80%;border-radius:8px;">
-                    <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman2["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman2["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman1["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman1["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman1["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman1["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
+                </a>
+            </div>
+
+            <div class="uu">
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman2["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman2["img"]); ?>" alt=""
+                         style="width:80%;border-radius:8px;">
+                    <p style="margin-top:0;margin-left:10%;" class="rr">
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
@@ -237,7 +233,7 @@
 
     <!--本周新书-->
     <div>
-        <a class="section_header" href="__APP__/Home/Book/book_list_v1/news.male">
+        <a class="section_header" href="/book/Home/Book/book_list_v1/news.male">
             <div class="section_flag_column_line"></div>
             <div class="section_title">
                 <div class="section_left">本周新书</div>
@@ -250,54 +246,54 @@
         <div class="section_content1">
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman1["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman1["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
-                    <p style="margin-top:0;margin-left:10%;" class="rr">{$bookman1.title}</p>
+                    <p style="margin-top:0;margin-left:10%;" class="rr"><?php echo ($bookman1["title"]); ?></p>
                 </a>
             </div>
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman2["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman2["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
-                </a>
-            </div>
-
-            <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                         style="width:80%;border-radius:8px;">
-                    <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman2["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman2["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman1["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman1["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
             <div class="uu">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman1["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman1["img"]); ?>" alt=""
                          style="width:80%;border-radius:8px;">
                     <p style="margin-top:0;margin-left:10%;" class="rr">
-                        {$bookman2.title}</p>
+                        <?php echo ($bookman2["title"]); ?></p>
+                </a>
+            </div>
+
+            <div class="uu">
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman2["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman2["img"]); ?>" alt=""
+                         style="width:80%;border-radius:8px;">
+                    <p style="margin-top:0;margin-left:10%;" class="rr">
+                        <?php echo ($bookman2["title"]); ?></p>
                 </a>
             </div>
 
@@ -321,14 +317,14 @@
 
         <div class="section_content3">
             <div class="section_content_item">
-                <a href="__APP__/Home/Book/bookinfo?bid={$bookman.id}&number=1">
-                    <img src="__PUBLIC__/Uploads/book/{$bookman.img}" alt="" style="width:30%;border-radius:8px;border:2px solid #bfbfbf;float:left;">
+                <a href="/book/Home/Book/bookinfo?bid=<?php echo ($bookman["id"]); ?>&number=1">
+                    <img src="/book/Public/Uploads/book/<?php echo ($bookman["img"]); ?>" alt="" style="width:30%;border-radius:8px;border:2px solid #bfbfbf;float:left;">
                     <div style="width:65%;float:right;height:110px;">
                         <p style="margin-top:0px;font-size:16px;color:#646262;">
-                            {$bookman.title}
+                            <?php echo ($bookman["title"]); ?>
                         </p>
                         <p style="margin-top:0px;font-size:13px;height:87px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;color:#646262;">
-                            {$bookman.content}
+                            <?php echo ($bookman["content"]); ?>
                         </p>
                     </div>
                 </a>
@@ -348,7 +344,7 @@
 
     <div class="ff">
         <div class="ff-img">
-            <img src="{$imgurl}" alt="" style="width:100%;">
+            <img src="<?php echo ($imgurl); ?>" alt="" style="width:100%;">
         </div>
         <div class="tt">@2019.All Rights Reserved.莫名看书</div>
         <div class="tt"></div>
@@ -379,9 +375,9 @@
         </div>
 <!--        <ul>-->
 <!--            <li ><a class="tab_item" href="/"><i class="icono-home"></i>首页</a></li>-->
-<!--            <li ><a class="tab_item" href="__APP__/Home/Book/book_type.html"><i class="icono-folder"></i>书库</a></li>-->
-<!--            <li><a class="tab_item" href="__APP__/Home/Index/recharge.html"><i class="icono-heart"></i>充值</a></li>-->
-<!--            <li><a class="tab_item" href="__APP__/Home/User/center.html"><i class="icono-smile"></i>我</a></li>-->
+<!--            <li ><a class="tab_item" href="/book/Home/Book/book_type.html"><i class="icono-folder"></i>书库</a></li>-->
+<!--            <li><a class="tab_item" href="/book/Home/Index/recharge.html"><i class="icono-heart"></i>充值</a></li>-->
+<!--            <li><a class="tab_item" href="/book/Home/User/center.html"><i class="icono-smile"></i>我</a></li>-->
 <!--        </ul>-->
     </div>
 </div>
