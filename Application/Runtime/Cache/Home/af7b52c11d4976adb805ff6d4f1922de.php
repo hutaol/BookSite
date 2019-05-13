@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -9,10 +9,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no"/>
-    <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/show.css?v1">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/icostyle.css">
-    <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
+    <link rel="stylesheet" href="/book/Public/home/css/amazeui.min.css">
+    <link rel="stylesheet" href="/book/Public/home/css/show.css?v1">
+    <link rel="stylesheet" href="/book/Public/home/css/icostyle.css">
+    <link href="/book/Public/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
     <script type="text/jscript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <style>
         .tiaojian {
@@ -62,60 +62,57 @@
 
 <div id="item_header">
     <a href="" class="datail-banner-head" onclick="javascript:history.go(-1);">
-        <img src="__PUBLIC__/home/img/back.png"
+        <img src="/book/Public/home/img/back.png"
              style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;transform: rotate(180deg);">
         <div style="float: left;color:#fff;font-size:1em;margin-left:3px;padding-top: 1px;">返回</div>
     </a>
     <div style="margin: auto;width: 57%;margin-top: 12px;text-align: center;color: #fff;font-size:16px;">
-        <if condition="!empty($typename['name'])">{$typename.name}
-            <else/>
-            书库
-        </if>
+        <?php if(!empty($typename['name'])): echo ($typename["name"]); ?>
+            <?php else: ?>
+            书库<?php endif; ?>
     </div>
     <a href="" class="detail-banner-mine">
-        <!--<img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
+        <!--<img src="/book/Public/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
     </a>
 </div>
 
 <ul class="tiaojian" style=" margin-top:60px;">
     <li>类型：</li>
     <li>
-        <a href="__URL__/book_type.html"
-        <eq name="sex" value=""> class="curr"</eq>
+        <a href="/book/Home/Book/book_type.html"
+        <?php if(($sex) == ""): ?>class="curr"<?php endif; ?>
         >全部</a>
         <a
-        <eq name="sex" value="1"> class="curr"</eq>
-        href="__URL__/book_type?sex=1&state={$state}&tid={$tid}">男频</a>
+        <?php if(($sex) == "1"): ?>class="curr"<?php endif; ?>
+        href="/book/Home/Book/book_type?sex=1&state=<?php echo ($state); ?>&tid=<?php echo ($tid); ?>">男频</a>
         <a
-        <eq name="sex" value="2"> class="curr"</eq>
-        href="__URL__/book_type?sex=2&state={$state}&tid={$tid}">女频</a>
+        <?php if(($sex) == "2"): ?>class="curr"<?php endif; ?>
+        href="/book/Home/Book/book_type?sex=2&state=<?php echo ($state); ?>&tid=<?php echo ($tid); ?>">女频</a>
     </li>
 </ul>
 <ul class="tiaojian" style=" margin-top: 5px;">
     <li>进度：</li>
     <li>
-        <a href="__URL__/book_type.html"
-        <eq name="state" value=""> class="curr"</eq>
+        <a href="/book/Home/Book/book_type.html"
+        <?php if(($state) == ""): ?>class="curr"<?php endif; ?>
         >全部</a>
         <a
-        <eq name="state" value="0"> class="curr"</eq>
-        href="__URL__/book_type?state=0&sex={$sex}&tid={$tid}">连载中</a> <a
-        <eq name="state" value="1"> class="curr"</eq>
-        href="__URL__/book_type?state=1&sex={$sex}&tid={$tid}">已完结</a>
+        <?php if(($state) == "0"): ?>class="curr"<?php endif; ?>
+        href="/book/Home/Book/book_type?state=0&sex=<?php echo ($sex); ?>&tid=<?php echo ($tid); ?>">连载中</a> <a
+        <?php if(($state) == "1"): ?>class="curr"<?php endif; ?>
+        href="/book/Home/Book/book_type?state=1&sex=<?php echo ($sex); ?>&tid=<?php echo ($tid); ?>">已完结</a>
     </li>
 </ul>
 
 <ul class="tiaojian" style=" margin-top:5px;">
     <li>分类：</li>
     <li>
-        <a href="__URL__/book_type.html"
-        <eq name="tid" value=""> class="curr"</eq>
+        <a href="/book/Home/Book/book_type.html"
+        <?php if(($tid) == ""): ?>class="curr"<?php endif; ?>
         >全部</a>
-        <volist name="type" id="vt">
-            <a
-            <eq name="tid" value="$vt['id']"> class="curr"</eq>
-            href="__URL__/book_type?tid={$vt.id}&sex={$sex}&state={$state}">{$vt.name}</a>
-        </volist>
+        <?php if(is_array($type)): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vt): $mod = ($i % 2 );++$i;?><a
+            <?php if(($tid) == $vt['id']): ?>class="curr"<?php endif; ?>
+            href="/book/Home/Book/book_type?tid=<?php echo ($vt["id"]); ?>&sex=<?php echo ($sex); ?>&state=<?php echo ($state); ?>"><?php echo ($vt["name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
     </li>
 </ul>
 
@@ -123,20 +120,18 @@
 <div>
 
     <div class="user-lists" style="margin-top:10px;">
-        <div id="books" now="1" num="{$total}" class="user-lists-content" style="border:none;">
-            <volist name="booklist" id="vb">
-                <a href="__URL__/bookinfo?bid={$vb.id}&number=1">
+        <div id="books" now="1" num="<?php echo ($total); ?>" class="user-lists-content" style="border:none;">
+            <?php if(is_array($booklist)): $i = 0; $__LIST__ = $booklist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vb): $mod = ($i % 2 );++$i;?><a href="/book/Home/Book/bookinfo?bid=<?php echo ($vb["id"]); ?>&number=1">
                     <div class="du">
-                        <img src="__PUBLIC__/Uploads/book/{$vb.img}" style="width:30%;float:left;">
+                        <img src="/book/Public/Uploads/book/<?php echo ($vb["img"]); ?>" style="width:30%;float:left;">
                         <div class="du-div">
-                            <p style="font-size:16px;line-height:20px;">{$vb.title}</p>
-                            <p style=" margin-top:5px;">{$vb.typetitle}</p>
+                            <p style="font-size:16px;line-height:20px;"><?php echo ($vb["title"]); ?></p>
+                            <p style=" margin-top:5px;"><?php echo ($vb["typetitle"]); ?></p>
                             <p style="margin-top:8px;line-height:20px;font-size:12px;color:#7c7b79;" class="du-p">
-                                {$vb.content|msubstr=0,60,'utf-8',false}</p>
+                                <?php echo (msubstr($vb["content"],0,60,'utf-8',false)); ?></p>
                         </div>
                     </div>
-                </a>
-            </volist>
+                </a><?php endforeach; endif; else: echo "" ;endif; ?>
 
 
         </div>
@@ -146,9 +141,9 @@
         <div class="bnav">
             <ul>
                 <li><a href="/"><i class="icono-home"></i>首页</a></li>
-                <li><a href="__APP__/Home/Book/book_type.html"><i class="icono-folder"></i>书库</a></li>
-                <li><a href="__APP__/Home/Index/recharge.html"><i class="icono-heart"></i>充值</a></li>
-                <li><a href="__APP__/Home/User/center.html"><i class="icono-smile"></i>我</a></li>
+                <li><a href="/book/Home/Book/book_type.html"><i class="icono-folder"></i>书库</a></li>
+                <li><a href="/book/Home/Index/recharge.html"><i class="icono-heart"></i>充值</a></li>
+                <li><a href="/book/Home/User/center.html"><i class="icono-smile"></i>我</a></li>
             </ul>
         </div>
     </div>
@@ -182,8 +177,8 @@
                         $.ajax({
 
                             //通过ajax传页数参数获取当前页数的数据
-                            url: '__APP__/Home/Book/book_typeajax',
-                            data: "tid={$tid}&sex={$sex}&state={$state}&page=" + now,
+                            url: '/book/Home/Book/book_typeajax',
+                            data: "tid=<?php echo ($tid); ?>&sex=<?php echo ($sex); ?>&state=<?php echo ($state); ?>&page=" + now,
                             type: 'GET',
                             cache: false,
                             dataType: "html",
