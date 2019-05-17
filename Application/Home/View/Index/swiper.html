@@ -85,14 +85,42 @@
 <body>
 <section class="carousel">
     <ul>
-        <li><a href="#"><img src="__PUBLIC__/home/img/banner01.png" alt=""></a></li>
+        <!-- <volist name="banners" id="vb">
+            <li><a href="#"><img src="__PUBLIC__/{$vb.img}" alt=""></a></li>
+        </volist> -->
+        <!-- <li><a href="#"><img src="__PUBLIC__/home/img/banner01.png" alt=""></a></li>
         <li><a href="#"><img src="__PUBLIC__/home/img/banner02.png" alt=""></a></li>
         <li><a href="#"><img src="__PUBLIC__/home/img/banner01.png" alt=""></a></li>
-        <li><a href="#"><img src="__PUBLIC__/home/img/banner02.png" alt=""></a></li>
+        <li><a href="#"><img src="__PUBLIC__/home/img/banner02.png" alt=""></a></li> -->
     </ul>
     <ol class="points"></ol>
 </section>
 </body>
+
+<script>
+    // var banners = {$banners};
+    // alert("1111");
+    function subHello(bb) {
+        alert(bb);
+        var banners = bb;
+
+        // var banners = [{img:'home/img/banner02.png'}, {img:'home/img/banner01.png'}]
+        var em = '';
+
+        for (i = 0; i < banners.length; i ++) {
+            alert(banners[i]);
+            var bb = banners[i].img;
+            em += '<li><a href="#"><img src="__PUBLIC__/' + bb + '" alt=""></a></li>'
+
+        }
+        var carousel = document.querySelector('.carousel');
+        var carouselUl = carousel.querySelector('ul');
+        carouselUl.innerHTML = em;
+    }
+
+    
+
+</script>
 
 
 <script>

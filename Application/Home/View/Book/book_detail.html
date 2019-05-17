@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/home/css/normalize.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/index1.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/main.css">
+
+</head>
+<body>
+
+<!--nav bar-->
+<div class="navbar">
+    <a class="navbar_left" href="javascript:void(0)" onclick="javascript:history.go(-1);">
+        <img class="navbar_left_img" src="__PUBLIC__/home/img/back.png">
+        <div class="navbar_left_title">返回</div>
+    </a>
+    <div class="navbar_title">详情</div>
+
+    <div class="navbar_right">
+        <a class="navbar_right_a" href="__APP__/Home/Index/index.html">首页</a>
+    </div>
+</div>
+
+<div style="margin-top: 44px; margin-bottom: 50px">
+
+    <!--head-->
+    <div>
+        <div class="list_item">
+            <img class="list_item_img" src="__PUBLIC__/Uploads/book/{$book.img}">
+            <div class="list_item_right">
+                <div class="list_item_right_title">{$book.title}</div>
+                <div class="list_item_right_text">
+                    {$book.state}
+                </div>
+
+                <notempty name="book.tag">
+                    <div class="list_item_right_tag">
+                        <div class="list_item_right_tag_item">{$book.tag}</div>
+                    </div>
+                </notempty>
+
+            </div>
+        </div>
+        <div class="list_item_right_text" style="padding: 0 10px 16px; background: white; margin-top: 0">
+            {$book.content|msubstr=0,60,'utf-8',false}
+        </div>
+
+    </div>
+
+    <div class="whitespace"></div>
+
+    <!--热门-->
+    <div>
+        <a class="section_header" href="__APP__/Home/Book/book_list_v1/hot=2&sex=1">
+            <div class="section_flag_column_line"></div>
+            <div class="section_title">
+                <div class="section_left">目录</div>
+                <div class="section_right">
+                    <span>共200章节</span>
+                </div>
+            </div>
+        </a>
+
+        <div class="section_content1">
+            <div class="cell_text">最新章节</div>
+            <div class="cell_text">第1章</div>
+        </div>
+    </div>
+
+    <div class="whitespace"></div>
+
+    <div>
+
+        <div class="section_header">
+            <div class="section_title">
+                <div class="section_left">打赏榜单</div>
+                <div class="section_right">
+                    <span>我要打赏</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_content">
+
+            <div class="vertical_center">
+                <div class="img_user_box">
+                    <img class="img_user_header" src="__PUBLIC__/home/img/1.jpg" alt="">
+                    <div class="img_user_tag">1</div>
+                </div>
+                <div class="nickname">我的</div>
+                <div class="welth_text">
+                    共打赏
+                    <span class="welth">111</span>
+                    书币
+                </div>
+            </div>
+
+            <div class="vertical_center">
+                <div class="img_user_box">
+                    <img class="img_user_header" src="__PUBLIC__/home/img/1.jpg" alt="">
+                    <div class="img_user_tag">1</div>
+                </div>
+                <div class="nickname">我的</div>
+                <div class="welth_text">
+                    共打赏
+                    <span class="welth">111</span>
+                    书币
+                </div>
+            </div>
+
+
+            <div class="vertical_center">
+                <div class="img_user_box">
+                    <img class="img_user_header" src="__PUBLIC__/home/img/1.jpg" alt="">
+                    <div class="img_user_tag">1</div>
+                </div>
+                <div class="nickname">我的</div>
+                <div class="welth_text">
+                    共打赏
+                    <span class="welth">111</span>
+                    书币
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="whitespace"></div>
+
+    <!--打赏记录-->
+    <div>
+        <div class="section_header">
+            <div class="section_title">
+                <div class="section_left">打赏记录</div>
+                <div class="section_right">
+                    <span>我要打赏</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="horizontal_center">
+            <img class="img_user_header margin_10" src="__PUBLIC__/home/img/1.jpg" alt="">
+            <div style="width: 100%;">
+                <div>ddd</div>
+                <div>ddd</div>
+            </div>
+            <div class="horizontal_center margin_10">
+                <img class="gift_img" src="__PUBLIC__/home/img/1.jpg" alt="">
+                <span>x1</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="whitespace"></div>
+
+    <div>
+        
+        <div class="section_header">
+            <div class="section_title">
+                <div class="section_left">精彩书评</div>
+                <div class="section_right">
+                    <span>我要评论</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <img src="" alt="">
+            <span>哈哈</span>
+            <span>哈哈</span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="footer">
+    <div>已在书架</div>
+    <div>开始阅读</div>
+</div>
+
+
+</body>
+</html>

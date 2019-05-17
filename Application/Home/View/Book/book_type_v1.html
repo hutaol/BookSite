@@ -9,12 +9,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no"/>
 
+    <link rel="stylesheet" href="__PUBLIC__/home/css/tabbar.css">
     <link rel="stylesheet" href="__PUBLIC__/home/css/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/index1.css">
+
 
 </head>
 <body>
-
 <div class="navbar">
     <a class="navbar_left" href="javascript:void(0)" onclick="javascript:history.go(-1);">
         <img class="navbar_left_img" src="__PUBLIC__/home/img/back.png">
@@ -27,5 +29,105 @@
     </div>
 </div>
 
+<div style="margin-top: 44px;">
+
+    <div>
+        <a class="section_header" href="__APP__/Home/Book/book_list_v1?hot=2&sex=1">
+            <div class="section_flag_column_line"></div>
+            <div class="section_title">
+                <div class="section_left">书架推荐</div>
+                <div class="section_right">
+                    <span>查看更多</span>
+                </div>
+            </div>
+        </a>
+
+        <div class="section_content1">
+
+            <volist name="bookweaks" id="vb">
+                <div class="uu">
+                    <a href="__APP__/Home/Book/book_detail?bid={$vb.id}">
+                        <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                             style="width:80%;border-radius:8px;">
+                        <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                    </a>
+                </div>
+            </volist>
+
+        </div>
+    </div>
+
+    <div>
+        <a class="section_header" href="__APP__/Home/Book/book_list_v1?hot=2&sex=1">
+            <div class="section_flag_column_line"></div>
+            <div class="section_title">
+                <div class="section_left">我的小说</div>
+                <div class="section_right">
+                    <span>查看更多</span>
+                </div>
+            </div>
+        </a>
+
+        <div class="section_content1">
+
+            <volist name="bookweaks" id="vb">
+                <div class="uu">
+                    <a href="__APP__/Home/Book/book_detail?bid={$vb.id}">
+                        <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                             style="width:80%;border-radius:8px;">
+                        <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                    </a>
+                </div>
+            </volist>
+
+        </div>
+    </div>
+
+</div>
+
+<!--img为未选中图片   data-img为选中图片-->
+<ul class="foot">
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_home.png" data-img="__PUBLIC__/home/img/icon_tab_home_select.png">
+        <a href="__APP__/Home/Index/index.html">
+            <img src="__PUBLIC__/home/img/icon_tab_home.png" />
+            <p>首页</p>
+        </a>
+    </li>
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_book.png" data-img="__PUBLIC__/home/img/icon_tab_book_select.png">
+        <a href="__APP__/Home/Book/book_type_v1.html">
+            <img src="__PUBLIC__/home/img/icon_tab_book_select.png" />
+            <p class="actives">书架</p>
+        </a>
+    </li>
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_recharge.png" data-img="__PUBLIC__/home/img/icon_tab_recharge_select.png">
+        <a href="__APP__/Home/Index/recharge.html">
+            <img src="__PUBLIC__/home/img/icon_tab_recharge.png" />
+            <p>充值</p>
+        </a>
+    </li>
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_mine.png" data-img="__PUBLIC__/home/img/icon_tab_mine_select.png">
+        <a href="__APP__/Home/User/center.html">
+            <img src="__PUBLIC__/home/img/icon_tab_mine.png" />
+            <p>我的</p>
+        </a>
+    </li>
+</ul>
+
 </body>
+
+<script type="text/javascript">
+    $('.foot li').click(function() {
+        $(this).find("p").addClass('actives');
+        $(this).siblings(".Imgbox").find("p").removeClass('actives');
+
+        var click = $(this).data('img');
+        $(this).find('img').attr('src', click);
+
+        $(this).siblings('.Imgbox').each(function() {
+            var noclick = $(this).attr('img');
+            $(this).find('img').attr('src', noclick);
+        })
+    });
+</script>
+
 </html>

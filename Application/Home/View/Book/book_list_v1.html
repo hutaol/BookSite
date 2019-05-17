@@ -41,11 +41,12 @@
                     <div class="list_item_right_text">
                         {$vb.content|msubstr=0,60,'utf-8',false}</div>
 
-                    <div class="list_item_right_tag">
-                        <div class="list_item_right_tag_item">玄幻</div>
-                        <div class="list_item_right_tag_item">玄幻</div>
+                    <notempty name="vb.tag">
+                        <div class="list_item_right_tag">
+                            <div class="list_item_right_tag_item">{$vb.tag}</div>
+                        </div>
+                    </notempty>
 
-                    </div>
                 </div>
             </div>
         </a>

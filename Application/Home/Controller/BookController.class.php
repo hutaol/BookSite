@@ -183,11 +183,27 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
 
     }
 
-    public function book_list_v1() {
+    public function book_detail()
+    {
         $b = M('book');
-        $books = $b->order('id ASC')->select();
+        $book = $b->where(array('id' => $_GET['bid']))->find();
+        $this->assign('book', $book);
+        $this->display();
+    }
+
+    public function book_list_v1()
+    {
+        $b = M('book');
+
+        $books = $b->where($_GET)->select();
         $this->assign('books', $books);
         $this->display();
+
+
+//        $b = M('book');
+//        $books = $b->order('id ASC')->select();
+//        $this->assign('books', $books);
+//        $this->display();
     }
 
     public function book_list()

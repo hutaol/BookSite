@@ -12,7 +12,33 @@ class IndexController extends Controller
         $user = $u->where(array('id' => $_SESSION['id']))->find();
         $this->assign('nickname', $user['nickname']);
         $this->assign('img', $user['img']);
+
+        // 轮播图
+        $banner = M('banner');
+        $banners = $banner->where(array('type' => 0))->limit(0, 4)->select();
+        
+        $this->assign('banners', $banners);
+
         $b = M('book');
+
+        // 热门
+        $bookhots = $b->where(array('hot' => 2))->limit(0, 6)->select();
+        $this->assign('bookhots', $bookhots);
+
+        // 推荐
+        $bookeics = $b->where(array('eic' => 2))->limit(0, 6)->select();
+        $this->assign('bookeics', $bookeics);
+
+        // 精选 20
+        $bookshows = $b->where(array('show' => 2))->limit(0, 20)->select();
+        $this->assign('bookshows', $bookshows);
+
+        // 本周新书  select * from n_book where time between current_date()-7 and sysdate()
+        $bookweaks = $b->query('select * from __TABLE__ where time between current_date()-7 and sysdate()');
+        $this->assign('bookweaks', $bookweaks);
+
+
+
         $book1 = $b->where(array('hot' => 2))->limit(1)->find();
         $book2 = $b->where(array('hot' => 2))->limit(1, 1)->select();
         $book3 = $b->where(array('hot' => 2))->limit(2, 2)->select();

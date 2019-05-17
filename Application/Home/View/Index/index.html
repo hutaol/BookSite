@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="__PUBLIC__/home/css/icostyle.css">
     <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
     <link rel="stylesheet" href="__PUBLIC__/home/css/index1.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/tabbar.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/main.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
+
+
     <script type="text/javascript" src="__PUBLIC__/home/js/jquery.min.js"></script>
 
 </head>
@@ -60,10 +65,17 @@
         </if>
 
         <!--轮播图-->
-        <div id="html_1">
-            <iframe align="center" width="200" height="170" src="./swiper.html" frameborder="no" border="0" marginwidth="0"
-                    marginheight="0" scrolling="no"></iframe>
+        <div style="width: 100%; height: auto;">
+            <div class="carousel">
+                <ul>
+                    <volist name="banners" id="banner">
+                        <li><a href="#"><img src="{$banner.image}" alt=""></a></li>
+                    </volist>
+                </ul>
+                <ol class="points"></ol>
+            </div>
         </div>
+
 
         <!--icon title-->
         <div class="items_div">
@@ -94,7 +106,7 @@
 
         <!--热门-->
         <div>
-            <a class="section_header" href="__APP__/Home/Book/book_list_v1/weekly.male">
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1/hot=2&sex=1">
                 <div class="section_flag_column_line"></div>
                 <div class="section_title">
                     <div class="section_left">本周热门</div>
@@ -106,57 +118,15 @@
 
             <div class="section_content1">
 
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">{$bookman1.title}</p>
-                    </a>
-                </div>
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman3.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman3.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman3.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman4.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman4.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman4.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman5.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman5.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman5.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman6.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman6.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman6.title}</p>
-                    </a>
-                </div>
+                <volist name="bookhots" id="vb">
+                    <div class="uu">
+                        <a href="__APP__/Home/Book/book_detail?bid={$vb.id}">
+                            <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                                 style="width:80%;border-radius:8px;">
+                            <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                        </a>
+                    </div>
+                </volist>
 
             </div>
         </div>
@@ -166,7 +136,7 @@
 
         <!--主编力荐-->
         <div>
-            <a class="section_header" href="__APP__/Home/Book/book_list_v1/recomm.male">
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1/eic=2&sex=1">
                 <div class="section_flag_column_line"></div>
                 <div class="section_title">
                     <div class="section_left">主编力荐</div>
@@ -178,57 +148,17 @@
 
             <div class="section_content1">
 
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">{$bookman1.title}</p>
-                    </a>
-                </div>
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
+                <volist name="bookeics" id="vb">
+                    <div class="uu">
+                        <a href="__APP__/Home/Book/book_detail?bid={$vb.id}">
+                            <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                                 style="width:80%;border-radius:8px;">
+                            <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                        </a>
+                    </div>
+                </volist>
 
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
+            </div>
 
             </div>
         </div>
@@ -238,7 +168,7 @@
 
         <!--本周新书-->
         <div>
-            <a class="section_header" href="__APP__/Home/Book/book_list_v1/news.male">
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1?hot=2&sex=1">
                 <div class="section_flag_column_line"></div>
                 <div class="section_title">
                     <div class="section_left">本周新书</div>
@@ -250,57 +180,15 @@
 
             <div class="section_content1">
 
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">{$bookman1.title}</p>
-                    </a>
-                </div>
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman1.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman1.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
-
-                <div class="uu">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman2.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman2.img}" alt=""
-                             style="width:80%;border-radius:8px;">
-                        <p style="margin-top:0;margin-left:10%;" class="rr">
-                            {$bookman2.title}</p>
-                    </a>
-                </div>
+                <volist name="bookweaks" id="vb">
+                    <div class="uu">
+                        <a href="__APP__/Home/Book/book_detail?bid={$vb.id}">
+                            <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                                 style="width:80%;border-radius:8px;">
+                            <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                        </a>
+                    </div>
+                </volist>
 
             </div>
         </div>
@@ -310,7 +198,7 @@
 
         <!--精选-->
         <div>
-            <a class="section_header" href="">
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1?show=2&sex=1">
                 <div class="section_flag_column_line"></div>
                 <div class="section_title">
                     <div class="section_left">精选</div>
@@ -321,19 +209,28 @@
             </a>
 
             <div class="section_content3">
-                <div class="section_content_item">
-                    <a href="__APP__/Home/Book/bookinfo?bid={$bookman.id}&number=1">
-                        <img src="__PUBLIC__/Uploads/book/{$bookman.img}" alt="" style="width:30%;border-radius:8px;border:2px solid #bfbfbf;float:left;">
-                        <div style="width:65%;float:right;height:110px;">
-                            <p style="margin-top:0px;font-size:16px;color:#646262;">
-                                {$bookman.title}
-                            </p>
-                            <p style="margin-top:0px;font-size:13px;height:87px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;color:#646262;">
-                                {$bookman.content}
-                            </p>
+
+                <volist name="bookshows" id="vb">
+
+                    <a href="__APP__/Home/Book/book_detail?bid={$vb.id}">
+                        <div class="list_item">
+                            <img class="list_item_img" src="__PUBLIC__/Uploads/book/{$vb.img}">
+                            <div class="list_item_right">
+                                <div class="list_item_right_title">{$vb.title}</div>
+                                <div class="list_item_right_text">
+                                    {$vb.content|msubstr=0,60,'utf-8',false}</div>
+
+                                <notempty name="vb.tag">
+                                    <div class="list_item_right_tag">
+                                        <div class="list_item_right_tag_item">{$vb.tag}</div>
+                                    </div>
+                                </notempty>
+
+
+                            </div>
                         </div>
                     </a>
-                </div>
+                </volist>
 
             </div>
 
@@ -365,49 +262,222 @@
 </div>
 
 
-<div class="info_bottom">
-    <div class="tab_bar" id="tabbar">
-        <div class="tab_item">
-            <i class="icono-home"></i>
-            <span class="tab_title">首页</span>
-        </div>
-        <div class="tab_item">
-            <i class="icono-folder"></i>
-            <span class="tab_title">书库</span>
-        </div>
-        <div class="tab_item">
-            <i class="icono-heart"></i>
-            <span class="tab_title">充值</span>
-        </div>
-        <div class="tab_item">
-            <i class="icono-smile"></i>
-            <span class="tab_title">我的</span>
-        </div>
-    </div>
-</div>
+<!--img为未选中图片   data-img为选中图片-->
+<ul class="foot">
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_home.png" data-img="__PUBLIC__/home/img/icon_tab_home_select.png">
+        <a href="__APP__/Home/Index/index.html">
+            <img src="__PUBLIC__/home/img/icon_tab_home_select.png" />
+            <p class="actives">首页</p>
+        </a>
+    </li>
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_book.png" data-img="__PUBLIC__/home/img/icon_tab_book_select.png">
+        <a href="__APP__/Home/Book/book_type_v1.html">
+            <img src="__PUBLIC__/home/img/icon_tab_book.png" />
+            <p>书架</p>
+        </a>
+    </li>
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_recharge.png" data-img="__PUBLIC__/home/img/icon_tab_recharge_select.png">
+        <a href="__APP__/Home/Index/recharge.html">
+            <img src="__PUBLIC__/home/img/icon_tab_recharge.png" />
+            <p>充值</p>
+        </a>
+    </li>
+    <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_mine.png" data-img="__PUBLIC__/home/img/icon_tab_mine.png">
+        <a href="__APP__/Home/User/center.html">
+            <img src="__PUBLIC__/home/img/icon_tab_mine.png" />
+            <p>我的</p>
+        </a>
+    </li>
+</ul>
 
-<script>
+</body>
 
-    $(function(){
-        $("#tabbar div").off("click").on("click",function(){
-            var index = $(this).index();
-            $(this).addClass("on").siblings().removeClass("on");
-            var content = "__APP__/Home/Index/index.html";
-            if (index == 1) {
-                content = "__APP__/Home/Book/book_type_v1.html";
-            } else if (index == 2) {
-                content = "__APP__/Home/Index/recharge.html";
-            } else if (index == 3) {
-                content = "__APP__/Home/User/center.html";
-            }
+<script type="text/javascript">
+    $('.foot li').click(function() {
+        $(this).find("p").addClass('actives');
+        $(this).siblings(".Imgbox").find("p").removeClass('actives');
 
-            $('#contentBox').load(content);
+        var click = $(this).data('img');
+        $(this).find('img').attr('src', click);
 
-        });
+        $(this).siblings('.Imgbox').each(function() {
+            var noclick = $(this).attr('img');
+            $(this).find('img').attr('src', noclick);
+        })
     });
+
+    var em = '';
+
+    for (i = 0; i < banners.length; i ++) {
+        alert(banners[i]);
+        var bb = banners[i].img;
+        em += '<li><a href="#"><img src="__PUBLIC__/' + bb + '" alt=""></a></li>'
+
+    }
 
 </script>
 
-</body>
+<script>    
+
+    window.onload = function () {
+        var carousel = document.querySelector('.carousel');
+        var carouselUl = carousel.querySelector('ul');
+        var carouselLis = carouselUl.querySelectorAll('li');
+        var points = carousel.querySelector('ol');
+        // 屏幕的宽度
+        var screenWidth = document.documentElement.offsetWidth;
+        var timer = null;
+
+        // 设置 ul 的高度
+        carouselUl.style.height = carouselLis[0].offsetHeight + 'px';
+
+        // 动态生成小圆点
+        for (var i = 0; i < carouselLis.length; i++) {
+            var li = document.createElement('li');
+            if (i == 0) {
+                li.classList.add('active');
+            }
+            points.appendChild(li);
+        }
+
+        // 初始三个固定的位置
+        var left = carouselLis.length - 1;
+        var center = 0;
+        var right = 1;
+
+        // 归位（多次使用，封装成函数）
+        setTransform();
+
+        // 调用定时器
+        timer = setInterval(showNext, 2000);
+
+        // 分别绑定touch事件
+        var startX = 0; // 手指落点
+        var startTime = null; // 开始触摸时间
+        carouselUl.addEventListener('touchstart', touchstartHandler); // 滑动开始绑定的函数 touchstartHandler
+        carouselUl.addEventListener('touchmove', touchmoveHandler); // 持续滑动绑定的函数 touchmoveHandler
+        carouselUl.addEventListener('touchend', touchendHandeler); // 滑动结束绑定的函数 touchendHandeler
+
+        // 轮播图片切换下一张
+        function showNext() {
+            // 轮转下标
+            left = center;
+            center = right;
+            right++;
+            //　极值判断
+            if (right > carouselLis.length - 1) {
+                right = 0;
+            }
+            //添加过渡（多次使用，封装成函数）
+            setTransition(1, 1, 0);
+            // 归位
+            setTransform();
+            // 自动设置小圆点
+            setPoint();
+        }
+
+        // 轮播图片切换上一张
+        function showPrev() {
+            // 轮转下标
+            right = center;
+            center = left;
+            left--;
+            //　极值判断
+            if (left < 0) {
+                left = carouselLis.length - 1;
+            }
+            //添加过渡
+            setTransition(0, 1, 1);
+            // 归位
+            setTransform();
+            // 自动设置小圆点
+            setPoint();
+        }
+
+        // 滑动开始
+        function touchstartHandler(e) {
+            // 清除定时器
+            clearInterval(timer);
+            // 记录滑动开始的时间
+            startTime = Date.now();
+            // 记录手指最开始的落点
+            startX = e.changedTouches[0].clientX;
+        }
+        // 滑动持续中
+        function touchmoveHandler(e) {
+            // 获取差值 自带正负
+            var dx = e.changedTouches[0].clientX - startX;
+            // 干掉过渡
+            setTransition(0, 0, 0);
+            // 归位
+            setTransform(dx);
+        }
+        //　滑动结束
+        function touchendHandeler(e) {
+            // 在手指松开的时候，要判断当前是否滑动成功
+            var dx = e.changedTouches[0].clientX - startX;
+            // 获取时间差
+            var dTime = Date.now() - startTime;
+            // 滑动成功的依据是滑动的距离（绝对值）超过屏幕的三分之一 或者滑动的时间小于300毫秒同时滑动的距离大于30
+            if (Math.abs(dx) > screenWidth / 3 || (dTime < 300 && Math.abs(dx) > 30)) {
+                // 滑动成功了
+                // 判断用户是往哪个方向滑
+                if (dx > 0) {
+                    // 往右滑 看到上一张
+                    showPrev();
+                } else {
+                    // 往左滑 看到下一张
+                    showNext();
+                }
+            } else {
+                // 添加上过渡
+                setTransition(1, 1, 1);
+                // 滑动失败了
+                setTransform();
+            }
+
+            // 重新启动定时器
+            clearInterval(timer);
+            // 调用定时器
+            timer = setInterval(showNext, 2000);
+        }
+        // 设置过渡
+        function setTransition(a, b, c) {
+            if (a) {
+                carouselLis[left].style.transition = 'transform 1s';
+            } else {
+                carouselLis[left].style.transition = 'none';
+            }
+            if (b) {
+                carouselLis[center].style.transition = 'transform 1s';
+            } else {
+                carouselLis[center].style.transition = 'none';
+            }
+            if (c) {
+                carouselLis[right].style.transition = 'transform 1s';
+            } else {
+                carouselLis[right].style.transition = 'none';
+            }
+        }
+
+        //　封装归位
+        function setTransform(dx) {
+            dx = dx || 0;
+            carouselLis[left].style.transform = 'translateX(' + (-screenWidth + dx) + 'px)';
+            carouselLis[center].style.transform = 'translateX(' + dx + 'px)';
+            carouselLis[right].style.transform = 'translateX(' + (screenWidth + dx) + 'px)';
+        }
+        // 动态设置小圆点的active类
+        var pointsLis = points.querySelectorAll('li');
+
+        function setPoint() {
+            for (var i = 0; i < pointsLis.length; i++) {
+                pointsLis[i].classList.remove('active');
+            }
+            pointsLis[center].classList.add('active');
+        }
+    }
+
+</script>
 
 </html>
