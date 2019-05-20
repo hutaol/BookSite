@@ -9,25 +9,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no"/>
 
-    <link rel="stylesheet" href="__PUBLIC__/home/css/tabbar.css">
     <link rel="stylesheet" href="__PUBLIC__/home/css/normalize.css">
+
     <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
+
     <link rel="stylesheet" href="__PUBLIC__/home/css/index1.css">
 
 
 </head>
 <body>
-<div class="navbar">
-    <a class="navbar_left" href="javascript:void(0)" onclick="javascript:history.go(-1);">
-        <img class="navbar_left_img" src="__PUBLIC__/home/img/back.png">
-        <div class="navbar_left_title">返回</div>
-    </a>
-    <div class="navbar_title">Title</div>
-
-    <div class="navbar_right">
-        <a class="navbar_right_a" href="__APP__/Home/Index/index.html">首页</a>
-    </div>
-</div>
 
 <div style="margin-top: 44px;">
 
@@ -86,7 +76,7 @@
 </div>
 
 <!--img为未选中图片   data-img为选中图片-->
-<ul class="foot">
+<ul class="tab_bar_box">
     <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_home.png" data-img="__PUBLIC__/home/img/icon_tab_home_select.png">
         <a href="__APP__/Home/Index/index.html">
             <img src="__PUBLIC__/home/img/icon_tab_home.png" />
@@ -116,7 +106,7 @@
 </body>
 
 <script type="text/javascript">
-    $('.foot li').click(function() {
+    $('.tab_bar_box li').click(function() {
         $(this).find("p").addClass('actives');
         $(this).siblings(".Imgbox").find("p").removeClass('actives');
 

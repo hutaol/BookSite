@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
     <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">
     <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/tabbar.css">
+
+    <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
 
 </head>
 
-<body class="project-fixed" style="background:#fff;">
+<body>
 
 <div>
     <div class="axc-console axc-error" id="axc-error">
@@ -26,9 +27,7 @@
     <div class="user-lists">
         <div>
             <div>
-                <div class="gg" style="text-align:center;">
-                    <img src="{$user.img}" alt="" style="width:80px;height:80px;border-radius:50%;">
-                </div>
+                <img src="{$user.img}" alt="" style="text-align:center;width:80px;height:80px;border-radius:50%;">
                 <p style="margin-top:0;text-align:center;line-height:25px;color:#333;">{$user.nickname}</p>
                 <p style="margin-top:0;text-align:center;line-height:25px;color:#333;">
 
@@ -115,7 +114,7 @@
 </div>
 
 <!--img为未选中图片   data-img为选中图片-->
-<ul class="foot">
+<ul class="tab_bar_box">
     <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_home.png" data-img="__PUBLIC__/home/img/icon_tab_home_select.png">
         <a href="__APP__/Home/Index/index.html">
             <img src="__PUBLIC__/home/img/icon_tab_home.png" />
@@ -131,7 +130,7 @@
     <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_recharge.png" data-img="__PUBLIC__/home/img/icon_tab_recharge_select.png">
         <a href="__APP__/Home/Index/recharge.html">
             <img src="__PUBLIC__/home/img/icon_tab_recharge.png" />
-            <p>充值 </p>
+            <p>充值</p>
         </a>
     </li>
     <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_mine.png" data-img="__PUBLIC__/home/img/icon_tab_mine_select.png">
@@ -145,7 +144,7 @@
 </body>
 
 <script type="text/javascript">
-    $('.foot li').click(function() {
+    $('.tab_bar_box li').click(function() {
         $(this).find("p").addClass('actives');
         $(this).siblings(".Imgbox").find("p").removeClass('actives');
 

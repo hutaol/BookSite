@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>详情</title>
+    <meta property="qc:admins" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
 
     <link rel="stylesheet" href="__PUBLIC__/home/css/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/index1.css">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/main.css">
 
 </head>
 <body>
 
 <!--nav bar-->
-<div class="navbar">
-    <a class="navbar_left" href="javascript:void(0)" onclick="javascript:history.go(-1);">
-        <img class="navbar_left_img" src="__PUBLIC__/home/img/back.png">
-        <div class="navbar_left_title">返回</div>
+<div class="nav_bar_box">
+    <a class="nav_bar_box_left" href="javascript:void(0)" onclick="javascript:history.go(-1);">
+        <img class="nav_bar_box_left_img" src="__PUBLIC__/home/img/back.png">
+        <div>返回</div>
     </a>
-    <div class="navbar_title">详情</div>
+    <div class="nav_bar_box_title">Title</div>
 
-    <div class="navbar_right">
-        <a class="navbar_right_a" href="__APP__/Home/Index/index.html">首页</a>
+    <div class="nav_bar_box_right">
+        <a href="__APP__/Home/Index/index.html">首页</a>
     </div>
 </div>
 
@@ -55,12 +58,12 @@
 
     <!--热门-->
     <div>
-        <a class="section_header" href="__APP__/Home/Book/book_list_v1/hot=2&sex=1">
-            <div class="section_flag_column_line"></div>
-            <div class="section_title">
+        <a class="section_header" href="__APP__/Home/Book/bookinfo_list/bid={$book.id}">
+            <div class="section_flag_line"></div>
+            <div class="section_row_between">
                 <div class="section_left">目录</div>
                 <div class="section_right">
-                    <span>共200章节</span>
+                    <span>共{$book.num}章节</span>
                 </div>
             </div>
         </a>

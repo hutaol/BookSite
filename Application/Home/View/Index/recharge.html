@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
     <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">
     <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
-    <link rel="stylesheet" href="__PUBLIC__/home/css/tabbar.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
 
 </head>
 
@@ -101,7 +101,7 @@
 </div>
 
 <!--img为未选中图片   data-img为选中图片-->
-<ul class="foot">
+<ul class="tab_bar_box">
     <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_home.png" data-img="__PUBLIC__/home/img/icon_tab_home_select.png">
         <a href="__APP__/Home/Index/index.html">
             <img src="__PUBLIC__/home/img/icon_tab_home.png" />
@@ -132,7 +132,7 @@
 </body>
 
 <script type="text/javascript">
-    $('.foot li').click(function() {
+    $('.tab_bar_box li').click(function() {
         $(this).find("p").addClass('actives');
         $(this).siblings(".Imgbox").find("p").removeClass('actives');
 
