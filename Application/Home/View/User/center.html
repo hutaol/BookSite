@@ -26,7 +26,7 @@
     </div>
     <div class="user-lists">
         <div>
-            <div>
+            <div style="display: flex; align-items: center; flex-direction: column">
                 <img src="{$user.img}" alt="" style="text-align:center;width:80px;height:80px;border-radius:50%;">
                 <p style="margin-top:0;text-align:center;line-height:25px;color:#333;">{$user.nickname}</p>
                 <p style="margin-top:0;text-align:center;line-height:25px;color:#333;">
@@ -48,7 +48,7 @@
                                 微信授权登录
                             </li>
                         </a> -->
-                        <a href="__APP__/Home/Book/book_hot.html" style="width:33%;float:left;border-bottom:none;">
+                        <a href="__APP__/Home/Book/book_list_v1?hot=2" style="width:33%;float:left;border-bottom:none;">
                             <li class="gg-li">
                                 <div style="width:33%;margin:0 auto;">
                                     <img src="__PUBLIC__/home/img/cc1.png" alt=""
@@ -143,19 +143,6 @@
 
 </body>
 
-<script type="text/javascript">
-    $('.tab_bar_box li').click(function() {
-        $(this).find("p").addClass('actives');
-        $(this).siblings(".Imgbox").find("p").removeClass('actives');
-
-        var click = $(this).data('img');
-        $(this).find('img').attr('src', click);
-
-        $(this).siblings('.Imgbox').each(function() {
-            var noclick = $(this).attr('img');
-            $(this).find('img').attr('src', noclick);
-        })
-    });
-</script>
+<script type="text/javascript" src="__PUBLIC__/home/js/tab.js"></script>
 
 </html>

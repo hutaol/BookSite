@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-    <head>
-        <meta charset="utf-8">
-        <title>搜索</title>
-        <meta property="qc:admins" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="format-detection" content="telephone=no" />
-        <link rel="stylesheet" href="__PUBLIC__/home/css//amazeui.min.css">
-        <link rel="stylesheet" href="__PUBLIC__/home/css//show.css">
-        <link href="__PUBLIC__/home/css//myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
-        <!-- <script>
-            var BASE_URL = "/projects";
-        </script> -->
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>搜索</title>
+    <meta property="qc:admins" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="__PUBLIC__/home/css//amazeui.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css//show.css">
+    <link href="__PUBLIC__/home/css//myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
 
-    <body class="project-fixed" >
-            <!---->
+    <link rel="stylesheet" href="__PUBLIC__/home/css/normalize.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
 
-            <div id="item_header">
-                <a href="" class="datail-banner-head" href="javascript:void(0)" onclick="javascript:history.go(-1);">
-                    <img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;transform: rotate(180deg);">
-                    <div style="float: left;color:#fff;font-size:1em;margin-left:3px;padding-top: 1px;">返回</div>
-                </a>
-                <div style="margin: auto;width: 57%;margin-top: 12px;text-align: center;color: #fff;"></div>
-                <a href="" class="detail-banner-mine">
-                    <!--<img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
-                </a>
+</head>
+
+<body class="project-fixed">
+
+<div class="nav_bar_box">
+    <a class="nav_bar_box_left" href="javascript:void(0)" onclick="javascript:history.go(-1);">
+        <img class="nav_bar_box_left_img" src="__PUBLIC__/home/img/back.png">
+        <div>返回</div>
+    </a>
+    <div class="nav_bar_box_title">搜索</div>
+
+    <div class="nav_bar_box_right">
+        <a href="__APP__/Home/Index/index.html">首页</a>
+    </div>
+</div>
+
+<div style="margin-top: 43px;">
+    <form action="__APP__/Home/Book/book_search" method="post" id="subform">
+        <div class="axc-console axc-error" id="axc-error">
+            <i class="axc-base axc-infor-base"></i>
+            <span></span>
+        </div>
+        <div style="height: 20px"></div>
+        <div class="user-lists">
+            <div class="user-lists-content" style="border-bottom:1px solid #e5e5e5">
+                <li class="sou" style="width:90%;margin:0 auto;list-style:none;height:30px;line-height:30px;">
+                    <label style="width:100%;">
+                        <p class="sou-p">书名</p>
+                        <input type="text" name="keywords" placeholder="请输入书名"
+                               style="height:30px;width:70%;float:left;color:#949291;">
+                    </label>
+                </li>
+
+
             </div>
-            <div style="margin-top: 43px;">
-            <form action="__APP__/Home/Book/book_search" method="post" id="subform" >
-                <div class="axc-console axc-error" id="axc-error">
-                    <i class="axc-base axc-infor-base"></i>
-                    <span></span>
-                </div>
-                <div class="biao">搜索</div>
-                <div class="user-lists" >
-                    <div class="user-lists-content" style="border-bottom:1px solid #e5e5e5">
-                        <li class="sou" style="width:90%;margin:0 auto;list-style:none;height:30px;line-height:30px;">
-                            <label style="width:100%;">
-                                <p class="sou-p">书名</p>
-                                <input type="text" name="keywords" placeholder="请输入书名" style="height:30px;width:70%;float:left;color:#949291;">
-                            </label>
-                        </li>
-
-
-                    </div>
-                    <div style="width:90%;margin:0 auto;padding-top:30px;">
-                        <a href="#" style="width:100%;height:30px;border-radius:5px;background:#02c88d;line-height:30px;color:#fff;display:inline-block;text-align:center;" onclick="document.getElementById('subform').submit();">搜索</a>
-                    </div>
-                     <!-- <div style="width:90%;margin:0 auto;padding-top:30px;">
-                        <h6 style="color:#333;margin:0 0 5px 0;font-size:14px;">热门搜索：</h6>
-                        <p style="margin:0 auto;line-height:20px;font-size:12px;">号娶天价新妻  北漂南潜闯荡的都市生活号娶天价新妻  北漂南潜闯荡的都市生活</p>
-                    </div> -->
-                </div>
-              </form>
+            <div style="width:90%;margin:0 auto;padding-top:30px;">
+                <a href="#"
+                   style="width:100%;height:30px;border-radius:5px;background:#02c88d;line-height:30px;color:#fff;display:inline-block;text-align:center;"
+                   onclick="document.getElementById('subform').submit();">搜索</a>
             </div>
+            <!-- <div style="width:90%;margin:0 auto;padding-top:30px;">
+               <h6 style="color:#333;margin:0 0 5px 0;font-size:14px;">热门搜索：</h6>
+               <p style="margin:0 auto;line-height:20px;font-size:12px;">号娶天价新妻  北漂南潜闯荡的都市生活号娶天价新妻  北漂南潜闯荡的都市生活</p>
+           </div> -->
+        </div>
+    </form>
+</div>
 
 
-
-
-
-    </body>
+</body>
 
 </html>

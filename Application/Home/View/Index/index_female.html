@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta property="qc:admins" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/show.css?v1">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/icostyle.css">
+    <!--    <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">-->
+    <link rel="stylesheet" href="__PUBLIC__/home/css/index1.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
+
+
+    <script type="text/javascript" src="__PUBLIC__/home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/home/js/tab.js"></script>
+    <script type="text/javascript" src='__PUBLIC__/home/js/swipe.js'></script>
+
+
+</head>
+
+<body>
+
+<div id="contentBox">
+
+    <!--nav-->
+    <div id="item_header" style="height:80px;">
+        <div class="header_search">
+            <img class="header_search_img" src="__PUBLIC__/home/img/header_search.png">
+            <span>请输入书名搜索</span>
+        </div>
+        <div class="header_title">
+            <div class="header_title_em ">
+                <a href="__APP__/Home/Index/index.html">
+                    <span>男生</span>
+                </a>
+            </div>
+            <div class="header_title_em header_actives">
+                <a href="__APP__/Home/Index/index_female.html">
+                    <span class="header_actives">女生</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="app_content" style="margin-top: 83px; margin-bottom: 50px">
+
+        <!--   阅读历史 -->
+        <!--        <if condition="!empty($history)">-->
+        <!--            <volist name="history" id="his">-->
+        <!--                <a href="__APP__/Home/Book/bookinfo?bid={$his.biid}&number={$his.number}">-->
+        <!--                    <div class="ss">-->
+        <!--                        <div class="ss-div">-->
+        <!--                            <img src="__PUBLIC__/home/img/ss.png" alt="">-->
+        <!--                            上次阅读：{$his.btitle} 第{$his.number}章-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </a>-->
+        <!--            </volist>-->
+        <!--        </if>-->
+
+        <!--轮播图-->
+        <div id='mySwipe' style='width:100%;margin:0 auto' class='swipe'>
+            <div class='swipe-wrap'>
+                <volist name="banners" id="banner">
+                    <div><a href="#"><img src="{$banner.image}" alt=""></a></div>
+                </volist>
+            </div>
+        </div>
+
+
+        <!--icon title-->
+        <div class="items_div">
+            <a class="item_a" href="__APP__/Home/Book/book_type.html">
+                <img class="item_img" src="__PUBLIC__/home/img/icon_button_sk.png">
+                <span>书库</span>
+            </a>
+<!--            <a class="item_a" href="">-->
+<!--                <img class="item_img" src="__PUBLIC__/home/img/icon_button_bd.png">-->
+<!--                <span>榜单</span>-->
+<!--            </a>-->
+            <a class="item_a" href="__APP__/Home/Book/book_type?state=1&sex=&tid=">
+                <img class="item_img" src="__PUBLIC__/home/img/icon_button_wb.png">
+                <span>完本</span>
+            </a>
+            <a class="item_a" href="">
+                <img class="item_img" src="__PUBLIC__/home/img/icon_button_hd.png">
+                <span>活动</span>
+            </a>
+            <a class="item_a" href="">
+                <img class="item_img" src="__PUBLIC__/home/img/icon_button_xm.png">
+                <span>限免</span>
+            </a>
+        </div>
+
+        <!--空白-->
+        <div class="whitespace"></div>
+
+        <!--热门-->
+        <div>
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1?hot=2&sex=2">
+                <div class="section_flag_column_line"></div>
+                <div class="section_title">
+                    <div class="section_left">本周热门</div>
+                    <div class="section_right">
+                        <span>查看更多</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="section_content1">
+
+                <volist name="bookhots" id="vb">
+                    <div class="uu">
+                        <a href="__APP__/Home/Book/bookinfo?bid={$vb.id}">
+                            <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                                 style="width:80%;border-radius:8px;">
+                            <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                        </a>
+                    </div>
+                </volist>
+
+            </div>
+        </div>
+
+        <!--空白-->
+        <div class="whitespace"></div>
+
+        <!--主编力荐-->
+        <div>
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1?eic=2&sex=2">
+                <div class="section_flag_column_line"></div>
+                <div class="section_title">
+                    <div class="section_left">主编力荐</div>
+                    <div class="section_right">
+                        <span>查看更多</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="section_content1">
+
+                <volist name="bookeics" id="vb">
+                    <div class="uu">
+                        <a href="__APP__/Home/Book/bookinfo?bid={$vb.id}">
+                            <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                                 style="width:80%;border-radius:8px;">
+                            <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                        </a>
+                    </div>
+                </volist>
+
+            </div>
+
+        </div>
+
+        <!--空白-->
+        <div class="whitespace"></div>
+
+        <!--本周新书-->
+        <div>
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1?week=1&sex=2">
+                <div class="section_flag_column_line"></div>
+                <div class="section_title">
+                    <div class="section_left">本周新书</div>
+                    <div class="section_right">
+                        <span>查看更多</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="section_content1">
+
+                <volist name="bookweaks" id="vb">
+                    <div class="uu">
+                        <a href="__APP__/Home/Book/bookinfo?bid={$vb.id}">
+                            <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt=""
+                                 style="width:80%;border-radius:8px;">
+                            <p style="margin-top:0;" class="rr">{$vb.title}</p>
+                        </a>
+                    </div>
+                </volist>
+
+            </div>
+        </div>
+
+        <!--空白-->
+        <div class="whitespace"></div>
+
+        <!--精选-->
+        <div>
+            <a class="section_header" href="__APP__/Home/Book/book_list_v1?show=2&sex=2">
+                <div class="section_flag_column_line"></div>
+                <div class="section_title">
+                    <div class="section_left">精选</div>
+                    <div class="section_right">
+                        <span>查看更多</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="section_content3">
+
+                <volist name="bookshows" id="vb">
+
+                    <a href="__APP__/Home/Book/bookinfo?bid={$vb.id}">
+                        <div class="list_item">
+                            <img class="list_item_img" src="__PUBLIC__/Uploads/book/{$vb.img}">
+                            <div class="list_item_right">
+                                <div class="list_item_right_title">{$vb.title}</div>
+                                <div class="list_item_right_text">
+                                    {$vb.content|msubstr=0,60,'utf-8',false}
+                                </div>
+                                <notempty name="vb.name">
+                                    <div class="list_item_right_tag">
+                                        <div class="list_item_right_tag_item">{$vb.name}</div>
+                                    </div>
+                                </notempty>
+                            </div>
+                        </div>
+                    </a>
+                </volist>
+
+            </div>
+
+        </div>
+
+        <!--空白-->
+        <div class="whitespace"></div>
+
+        <div class="vertical_center">
+            <div class="bottom_qr_img">
+                <img src="{$imgurl}" alt="">
+            </div>
+            <div class="text_align" style="height: 30px">{$wxname}</div>
+
+            <div class="text_align" style="height: 30px">@2019.All Rights Reserved.莫名看书</div>
+            <div style="height: 30px"></div>
+        </div>
+
+    </div>
+
+    <!--tab bar-->
+    <!--img为未选中图片   data-img为选中图片-->
+    <ul class="tab_bar_box">
+        <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_home.png"
+            data-img="__PUBLIC__/home/img/icon_tab_home_select.png">
+            <a href="__APP__/Home/Index/index.html">
+                <img src="__PUBLIC__/home/img/icon_tab_home_select.png"/>
+                <p class="actives">首页</p>
+            </a>
+        </li>
+        <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_book.png"
+            data-img="__PUBLIC__/home/img/icon_tab_book_select.png">
+            <a href="__APP__/Home/Book/book_type_v1.html">
+                <img src="__PUBLIC__/home/img/icon_tab_book.png"/>
+                <p>书架</p>
+            </a>
+        </li>
+        <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_recharge.png"
+            data-img="__PUBLIC__/home/img/icon_tab_recharge_select.png">
+            <a href="__APP__/Home/Index/recharge.html">
+                <img src="__PUBLIC__/home/img/icon_tab_recharge.png"/>
+                <p>充值</p>
+            </a>
+        </li>
+        <li class="Imgbox" img="__PUBLIC__/home/img/icon_tab_mine.png" data-img="__PUBLIC__/home/img/icon_tab_mine.png">
+            <a href="__APP__/Home/User/center.html">
+                <img src="__PUBLIC__/home/img/icon_tab_mine.png"/>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+
+    $('.header_title div').click(function () {
+        $(this).addClass('header_actives');
+        $(this).siblings(".header_title_em").removeClass('header_actives');
+    });
+
+</script>
+
+<script>
+
+    // pure JS
+    var elem = document.getElementById('mySwipe');
+    window.mySwipe = Swipe(elem, {
+        startSlide: 0,
+        auto: 3000,
+        continuous: true,
+        disableScroll: true,
+        stopPropagation: true,
+        callback: function(index, element) {},
+        transitionEnd: function(index, element) {}
+    });
+
+    // with jQuery
+    // window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+
+</script>
+
+
+</html>

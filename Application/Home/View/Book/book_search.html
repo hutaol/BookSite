@@ -9,27 +9,30 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="format-detection" content="telephone=no" />
-        <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">
-        <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">
-        <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">
-        <!-- <script>
-            var BASE_URL = "/projects";
-        </script> -->
+<!--        <link rel="stylesheet" href="__PUBLIC__/home/css/amazeui.min.css">-->
+<!--        <link rel="stylesheet" href="__PUBLIC__/home/css/show.css">-->
+<!--        <link href="__PUBLIC__/home/css/myb-axc.css" rel="stylesheet" 0="projects\assets\AppAsset">-->
+
+        <link rel="stylesheet" href="__PUBLIC__/home/css/normalize.css">
+        <link rel="stylesheet" href="__PUBLIC__/home/css/app.css">
+
     </head>
 
     <body class="project-fixed" style="background:#fff;">
             <!---->
 
-            <div id="item_header">
-                <a href="" class="datail-banner-head" href="javascript:void(0)" onclick="javascript:history.go(-1);">
-                    <img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;transform: rotate(180deg);">
-                    <div style="float: left;color:#fff;font-size:1em;margin-left:3px;padding-top: 1px;">返回</div>
+            <div class="nav_bar_box">
+                <a class="nav_bar_box_left" href="javascript:void(0)" onclick="javascript:history.go(-1);">
+                    <img class="nav_bar_box_left_img" src="__PUBLIC__/home/img/back.png">
+                    <div>返回</div>
                 </a>
-                <div style="margin: auto;width: 57%;margin-top: 12px;text-align: center;color: #fff;font-size:18px;">书籍搜索</div>
-                <a href="" class="detail-banner-mine">
-                    <!--<img src="__PUBLIC__/home/img/back.png" style="float: left;margin-top: 5px;height: 18px;width: 18px;padding-bottom: 0;">-->
-                </a>
+                <div class="nav_bar_box_title">书籍搜索</div>
+
+                <div class="nav_bar_box_right">
+                    <a href="__APP__/Home/Index/index.html">首页</a>
+                </div>
             </div>
+
             <div style="margin-top: 43px;">
                 <div class="axc-console axc-error" id="axc-error">
                     <i class="axc-base axc-infor-base"></i>
@@ -38,12 +41,21 @@
                 <div class="user-lists" style="margin-top:53px;">
                     <div class="user-lists-content" style="border:none;">
                         <volist name="books" id="vb">
-                            <a href="__URL__/bookinfo?bid={$vb.id}&number=1" style="" >
-                                <div class="du">
-                                    <img src="__PUBLIC__/Uploads/book/{$vb.img}" alt="" style="width:30%;float:left;height:100%;">
-                                    <div class="du-div">
-                                        <p style="font-size:16px;line-height:30px;">{$vb.title}</p>
-                                        <p style="margin-top:0;line-height:20px;font-size:12px;color:#7c7b79;" class="du-p">{$vb.content}</p>
+
+                            <a href="__URL__/bookinfo?bid={$vb.id}&number=1">
+                                <div class="list_item">
+                                    <img class="list_item_img" src="__PUBLIC__/Uploads/book/{$vb.img}">
+                                    <div class="list_item_right">
+                                        <div class="list_item_right_title">{$vb.title}</div>
+                                        <div class="list_item_right_text">
+                                            {$vb.content|msubstr=0,60,'utf-8',false}</div>
+
+                                        <notempty name="vb.name">
+                                            <div class="list_item_right_tag">
+                                                <div class="list_item_right_tag_item">{$vb.name}</div>
+                                            </div>
+                                        </notempty>
+
                                     </div>
                                 </div>
                             </a>

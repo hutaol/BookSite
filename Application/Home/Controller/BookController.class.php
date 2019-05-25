@@ -1,89 +1,75 @@
 <?php
+
 namespace Home\Controller;
 
 use Think\Controller;
+
 class BookController extends Controller
 {
     public function book_type()
     {
-    
-     $tid=$_GET['tid'];
-     $sex=$_GET['sex'];
-     $state=$_GET['state'];
 
-     if(!empty($tid))
-     {
-    
-         $ww['tid']=$tid; 
-     }
+        $tid = $_GET['tid'];
+        $sex = $_GET['sex'];
+        $state = $_GET['state'];
+
+        if (!empty($tid)) {
+
+            $ww['tid'] = $tid;
+        }
 
         $t = M('type');
         $b = M('book');
         $type = $t->order("id asc")->select();
-        $wt['id']=$tid; 
+        $wt['id'] = $tid;
         $typename = $t->where($wt)->find();
 
-   if(!empty($tid) && !empty($sex) && !empty($state))
-     {
-    $w['tid'] =$tid;
-    $w['sex'] =$sex;
-    $w['state'] =$state;
+        if (!empty($tid) && !empty($sex) && !empty($state)) {
+            $w['tid'] = $tid;
+            $w['sex'] = $sex;
+            $w['state'] = $state;
 
-     $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
-      $count = $b->field('id')->where($w)->order("id desc")->select();
-         
-     }elseif(!empty($tid) && !empty($sex))
-     {
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
+            $count = $b->field('id')->where($w)->order("id desc")->select();
 
-    $w['tid'] =$tid;
-    $w['sex'] =$sex;
+        } elseif (!empty($tid) && !empty($sex)) {
 
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
-      $count = $b->field('id')->where($w)->order("id desc")->select();
+            $w['tid'] = $tid;
+            $w['sex'] = $sex;
 
-     }elseif(!empty($tid) && !empty($state))
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
+            $count = $b->field('id')->where($w)->order("id desc")->select();
 
-     {
-    $w['tid'] =$tid;
-    $w['state'] =$state;
+        } elseif (!empty($tid) && !empty($state)) {
+            $w['tid'] = $tid;
+            $w['state'] = $state;
 
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
-      $count = $b->field('id')->where($w)->order("id desc")->select();
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
+            $count = $b->field('id')->where($w)->order("id desc")->select();
 
-     }elseif(!empty($tid))
+        } elseif (!empty($tid)) {
 
-     {
+            $w['tid'] = $tid;
 
-    $w['tid'] =$tid;
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
+            $count = $b->where($w)->field('id')->order("id desc")->select();
+        } elseif (!empty($sex)) {
+            $w['sex'] = $sex;
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
+            $count = $b->field('id')->where($w)->order("id desc")->select();
+        } elseif (!empty($state)) {
+            $w['state'] = $state;
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
+            $count = $b->field('id')->where($w)->order("id desc")->select();
+        } else {
 
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
-      $count = $b->where($w)->field('id')->order("id desc")->select();
-     }
-     elseif(!empty($sex))
+            $booklist = $b->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
 
-     {
-        $w['sex'] =$sex;
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
-      $count = $b->field('id')->where($w)->order("id desc")->select();
-     }
-     elseif(!empty($state))
-     {
-     $w['state'] =$state;
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
-      $count = $b->field('id')->where($w)->order("id desc")->select();
-     }
+            $count = $b->field('id')->order("id desc")->select();
 
-     else
+        }
 
-     {
-       
-$booklist = $b->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->limit(10)->select();
-
-        $count = $b->field('id')->order("id desc")->select();
-
-     }
-
-      $total = ceil(count($count)/10);
+        $total = ceil(count($count) / 10);
 
         $this->assign('type', $type);
         $this->assign('typename', $typename);
@@ -99,87 +85,73 @@ $booklist = $b->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.
     {
 
 
-     $tid=$_GET['tid'];
-     $sex=$_GET['sex'];
-     $state=$_GET['state'];
-     $page=$_GET['page'];
+        $tid = $_GET['tid'];
+        $sex = $_GET['sex'];
+        $state = $_GET['state'];
+        $page = $_GET['page'];
 
-     if(!empty($tid))
-     {
-    
-         $ww['tid']=$tid; 
-     }
+        if (!empty($tid)) {
+
+            $ww['tid'] = $tid;
+        }
 
         $t = M('type');
         $b = M('book');
         $type = $t->order("id asc")->select();
-        $wt['id']=$tid; 
+        $wt['id'] = $tid;
         $typename = $t->where($wt)->find();
 
-   if(!empty($tid) && !empty($sex) && !empty($state))
-     {
-    $w['tid'] =$tid;
-    $w['sex'] =$sex;
-    $w['state'] =$state;
+        if (!empty($tid) && !empty($sex) && !empty($state)) {
+            $w['tid'] = $tid;
+            $w['sex'] = $sex;
+            $w['state'] = $state;
 
-     $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page,10)->select();
-    
-         
-     }elseif(!empty($tid) && !empty($sex))
-     {
-
-    $w['tid'] =$tid;
-    $w['sex'] =$sex;
-
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page,10)->select();
-
-     }elseif(!empty($tid) && !empty($state))
-
-     {
-    $w['tid'] =$tid;
-    $w['state'] =$state;
-
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page,10)->select();
-     
-
-     }elseif(!empty($tid))
-
-     {
-
-    $w['tid'] =$tid;
-
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page,10)->select();
-    
-     }
-     elseif(!empty($sex))
-
-     {
-        $w['sex'] =$sex;
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page,10)->select();
-    
-     }
-     elseif(!empty($state))
-     {
-     $w['state'] =$state;
-   $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page,10)->select();
-   
-     }
-
-     else
-
-     {
-       
-$booklist = $b->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page,10)->select();
-
-     }
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page, 10)->select();
 
 
- foreach( $booklist as $rec) {
+        } elseif (!empty($tid) && !empty($sex)) {
 
-$html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class='du'><img style='width:30%;float:left;' src='http://".$_SERVER['SERVER_NAME']."/Public/Uploads/book/".$rec['img']."'/><div class='du-div'><p style='font-size:16px;line-height:20px;'>".$rec['title']."</p> <p style='margin-top:5px;''>".$rec['typetitle']."</p><p style='margin-top:8px;line-height:20px;font-size:12px;color:#7c7b79;' class='du-p'>".mb_substr($rec['content'],0,60,'utf-8')."</p></div></div></a>";
+            $w['tid'] = $tid;
+            $w['sex'] = $sex;
 
-   }
-  echo $html; 
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page, 10)->select();
+
+        } elseif (!empty($tid) && !empty($state)) {
+            $w['tid'] = $tid;
+            $w['state'] = $state;
+
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page, 10)->select();
+
+
+        } elseif (!empty($tid)) {
+
+            $w['tid'] = $tid;
+
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page, 10)->select();
+
+        } elseif (!empty($sex)) {
+            $w['sex'] = $sex;
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page, 10)->select();
+
+        } elseif (!empty($state)) {
+            $w['state'] = $state;
+            $booklist = $b->where($w)->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page, 10)->select();
+
+        } else {
+
+            $booklist = $b->join('n_type ON n_type.id = n_book.tid', 'LEFT')->field('n_book.*,n_type.name AS typetitle')->order('id desc')->page($page, 10)->select();
+
+        }
+
+//        echo $booklist;
+        $this->ajaxReturn($booklist, '', '1', 'JSON');
+
+//        foreach ($booklist as $rec) {
+//
+//            $html = $html . "<a href='/Home/Book/bookinfo?bid" . $rec['id'] . "&number=1'><div class='du'><img style='width:30%;float:left;' src='http://" . $_SERVER['SERVER_NAME'] . "/Public/Uploads/book/" . $rec['img'] . "'/><div class='du-div'><p style='font-size:16px;line-height:20px;'>" . $rec['title'] . "</p> <p style='margin-top:5px;''>" . $rec['typetitle'] . "</p><p style='margin-top:8px;line-height:20px;font-size:12px;color:#7c7b79;' class='du-p'>" . mb_substr($rec['content'], 0, 60, 'utf-8') . "</p></div></div></a>";
+//
+//        }
+//        echo $html;
 
     }
 
@@ -194,11 +166,39 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
     public function book_list_v1()
     {
         $b = M('book');
+        $arr = array();
+        $title = '热门';
+        if ($_GET['hot']) {
+            $arr['hot'] = $_GET['hot'];
+            $title = '本周热门';
+        }
+        if ($_GET['sex']) {
+            $arr['sex'] = $_GET['sex'];
+        }
+        if ($_GET['eic']) {
+            $arr['eic'] = $_GET['eic'];
+            $title = '主播力荐';
+        }
+        if ($_GET['show']) {
+            $arr['show'] = $_GET['show'];
+            $title = '精选';
+        }
 
-        $books = $b->where($_GET)->select();
+        if ($_GET['week']) {
+            // 本周
+            $title = '本周新书';
+
+            $books = $b->query("select * from __TABLE__ where time between current_date()-7 and sysdate() and sex = '" . $_GET['sex'] . "'");
+
+        } else {
+            $books = $b->where($arr)->select();
+        }
+
+
         $this->assign('books', $books);
         $this->display();
-
+        echo "<script>document.title = \"" . $title . "\" </script>";
+        echo "<script>document.getElementsByClassName('nav_bar_box_title')[0].innerHTML=\"".$title."\"</script>";
 
 //        $b = M('book');
 //        $books = $b->order('id ASC')->select();
@@ -216,6 +216,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
         $this->assign('books', $books);
         $this->display();
     }
+
     public function book_list2()
     {
         $b = M('book');
@@ -223,6 +224,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
         $this->assign('books', $books);
         $this->display();
     }
+
     public function book_hot()
     {
         $b = M('book');
@@ -230,6 +232,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
         $this->assign('books', $books);
         $this->display();
     }
+
     public function book_search()
     {
         $b = M('book');
@@ -238,6 +241,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
         $this->assign('books', $books);
         $this->display();
     }
+
     public function bookinfo_list()
     {
         $bi = M('bookinfo');
@@ -248,6 +252,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
         $this->assign('book', $book);
         $this->display();
     }
+
     public function bookinfo()
     {
         $_SESSION['jurl'] = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -261,7 +266,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
         }
         $this->checkvip();
         $bi = M('bookinfo');
-        $bookinfo = $bi->where(array('bid' => $_GET['bid'], 'number' => $_GET['number']))->find();
+        $bookinfo = $bi->where(array('bid' => $_GET['bid'], 'number' => $_GET['number'] ?: '1'))->find();
         if (!$bookinfo) {
             $this->error('该章节不存在，请稍后再来');
         }
@@ -380,6 +385,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
         }
         $this->display();
     }
+
     public function add_bookmark()
     {
         $this->checklogin();
@@ -400,6 +406,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
             $this - error('添加书签失败，请重试');
         }
     }
+
     public function spare()
     {
         $u = M('user');
@@ -411,6 +418,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
             $this->success('感谢您的打赏！');
         }
     }
+
     public function index1()
     {
         if (!empty($_GET['code'])) {
@@ -460,6 +468,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
             header("Location:" . $_SESSION['jurl']);
         }
     }
+
     public function checklogin()
     {
 
@@ -495,6 +504,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
             }
         }
     }
+
     public function checkfollow()
     {
         session_start();
@@ -538,6 +548,7 @@ $html=$html."<a href='/Home/Book/bookinfo?bid".$rec['id']."&number=1'><div class
             return 1;
         }
     }
+
     public function checkvip()
     {
         $u = M('user');
