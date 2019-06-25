@@ -6,71 +6,57 @@ class IndexController extends Controller
 {
     public function index()
     {
-
-        if (!$this.checkWeChatAuth()) {
-            $this.weChatLogin();
-
-        }
-        $this.checkVip();
-
+        $this->checklogin();
+        $this->checkvip();
         $u = M('user');
         $user = $u->where(array('id' => $_SESSION['id']))->find();
         $this->assign('nickname', $user['nickname']);
         $this->assign('img', $user['img']);
-
+        $b = M('book');
+        $book1 = $b->where(array('eic' => 2))->limit(1)->find();
+        $book2 = $b->where(array('eic' => 2))->limit(1, 1)->select();
+        $book3 = $b->where(array('eic' => 2))->limit(2, 2)->select();
+        $this->assign('book1', $book1);
+        $this->assign('book2', $book2[0]);
+        $this->assign('book3', $book3[0]);
+        $bookman = $b->where(array('sex' => 1, 'show' => 2))->limit(1)->find();
+        $bookman1 = $b->where(array('sex' => 1, 'show' => 2))->limit(1, 1)->select();
+        $bookman2 = $b->where(array('sex' => 1, 'show' => 2))->limit(2, 1)->select();
+        $bookman3 = $b->where(array('sex' => 1, 'show' => 2))->limit(3, 1)->select();
+        $bookman4 = $b->where(array('sex' => 1, 'show' => 2))->limit(4, 1)->select();
+        $bookman5 = $b->where(array('sex' => 1, 'show' => 2))->limit(5, 1)->select();
+        $bookman6 = $b->where(array('sex' => 1, 'show' => 2))->limit(6, 1)->select();
+        $bookwoman = $b->where(array('sex' => 2, 'show' => 2))->limit(1)->find();
+        $bookwoman1 = $b->where(array('sex' => 2, 'show' => 2))->limit(1, 1)->select();
+        $bookwoman2 = $b->where(array('sex' => 2, 'show' => 2))->limit(2, 1)->select();
+        $bookwoman3 = $b->where(array('sex' => 2, 'show' => 2))->limit(3, 1)->select();
+        $bookwoman4 = $b->where(array('sex' => 2, 'show' => 2))->limit(4, 1)->select();
+        $bookwoman5 = $b->where(array('sex' => 2, 'show' => 2))->limit(5, 1)->select();
+        $bookwoman6 = $b->where(array('sex' => 2, 'show' => 2))->limit(6, 1)->select();
+        $this->assign('bookman1', $bookman1[0]);
+        $this->assign('bookman2', $bookman2[0]);
+        $this->assign('bookman3', $bookman3[0]);
+        $this->assign('bookman4', $bookman4[0]);
+        $this->assign('bookman5', $bookman5[0]);
+        $this->assign('bookman6', $bookman6[0]);
+        $this->assign('bookman', $bookman);
+        $this->assign('bookwoman1', $bookwoman1[0]);
+        $this->assign('bookwoman2', $bookwoman2[0]);
+        $this->assign('bookwoman3', $bookwoman3[0]);
+        $this->assign('bookwoman4', $bookwoman4[0]);
+        $this->assign('bookwoman5', $bookwoman5[0]);
+        $this->assign('bookwoman6', $bookwoman6[0]);
+        $this->assign('bookwoman', $bookwoman);
         $h = M('history');
         $history = $h->join('n_book ON n_book.id = n_history.biid', 'LEFT')->where(array('uid' => $user['id']))->field('n_history.*,n_book.title AS btitle')->order('time DESC')->limit(1)->select();
         $this->assign('history', $history);
-
-        $this->queryIndexDataWithSex('1');
-
-        $this->display();
-    }
-
-    public function index_female()
-    {
-        $this->queryIndexDataWithSex('2');
-
-        $this->display();
-
-    }
-
-    public function queryIndexDataWithSex($sex = '1')
-    {
-        // 微信二维码
         $wc = M('wechat');
         $wechat = $wc->where(array('weburl' => $_SERVER['HTTP_HOST']))->find();
         $imgurl = 'http://open.weixin.qq.com/qr/code?username=' . $wechat['wxnumber'];
         $this->assign('imgurl', $imgurl);
         $this->assign('wxname', $wechat['wxnumber']);
-
-        // 轮播图
-        $banner = M('banner');
-        $banners = $banner->where(array('type' => $sex))->limit(0, 4)->select();
-
-        $this->assign('banners', $banners);
-
-        $b = M('book');
-
-        // 热门
-        $bookhots = $b->where(array('hot' => 2, 'sex' => $sex))->limit(0, 6)->select();
-        $this->assign('bookhots', $bookhots);
-
-        // 推荐
-        $bookeics = $b->where(array('eic' => 2, 'sex' => $sex))->limit(0, 6)->select();
-        $this->assign('bookeics', $bookeics);
-
-        // 精选 20
-        $bookshows = $b->where(array('show' => 2, 'sex' => $sex))->limit(0, 20)->select();
-        $this->assign('bookshows', $bookshows);
-
-        //  本周新书  select * from n_book where time between current_date()-7 and sysdate()
-        $bookweaks = $b->query("select * from __TABLE__ where time between current_date()-7 and sysdate() and sex = '" . $sex . "' LIMIT " . 6);
-
-        $this->assign('bookweaks', $bookweaks);
-
+        $this->display();
     }
-
     public function qrshow()
     {
         $wc = M('wechat');
@@ -127,7 +113,7 @@ class IndexController extends Controller
     }
     public function recharge_promotion()
     {
-//        $this->checklogin();
+        $this->checklogin();
         $pr = M('promotion');
         $prom = $pr->where(array('id' => $_GET['pid'], 'st' => 2))->find();
         if (!$prom) {
@@ -164,8 +150,6 @@ class IndexController extends Controller
             $this->error('数据异常，请重试');
         }
     }
-
-    // 微信授权回调
     public function index1()
     {
         if ($_GET['code']) {
@@ -174,7 +158,6 @@ class IndexController extends Controller
             $appid = $wechat['appid'];
             $secret = $wechat['appsecret'];
             $code = $_GET['code'];
-            // 通过code换取网页授权access_token
             $get_token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . $appid . '&secret=' . $secret . '&code=' . $code . '&grant_type=authorization_code';
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $get_token_url);
@@ -187,7 +170,6 @@ class IndexController extends Controller
             $json_obj = json_decode($res, true);
             $access_token = $json_obj['access_token'];
             $openid = $json_obj['openid'];
-            // 拉取用户信息(需scope为 snsapi_userinfo)
             $get_user_info_url = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $access_token . '&openid=' . $openid . '&lang=zh_CN';
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $get_user_info_url);
@@ -204,8 +186,6 @@ class IndexController extends Controller
                 $_SESSION['id'] = $user['id'];
                 cookie('id', $user['id']);
             } else {
-                // TODO token怎么保存
-                $w['token'] = $access_token;
                 $w['openid'] = $user_obj['openid'];
                 $w['nickname'] = $user_obj['nickname'];
                 $w['img'] = $user_obj['headimgurl'];
@@ -230,29 +210,10 @@ class IndexController extends Controller
     public function checklogin()
     {
         if (empty($_SESSION['id'])) {
-
-            if (C('CHECK_LOGIN') == '0') {
-                $u = M('user');
-
-                $w['openid'] = 'oiYLe0pszqZ3K2x9cV8TCrW9uHWo';
-                $w['nickname'] = 'test';
-                $w['img'] = 'http://thirdwx.qlogo.cn/mmopen/vi_32/6nUoyZqMVr2jKxQVbNFFaVzapWBpqzHicQux8oCd9ibxwtLeBamYHFF8WNFXPXVbfpEkKue5GZ4O9FL7cPyOeEiag/132';
-                $w['gold'] = 0;
-                $w['vip'] = 1;
-                $w['sex'] = '1';
-                $uid = $u->add($w);
-                $_SESSION['id'] = $uid;
-                cookie('id', $uid);
-                $this->redirect('Index/index');
-
-                return;
-            }
-
             $wc = M('wechat');
             $wechat = $wc->where(array('weburl' => $_SERVER['HTTP_HOST']))->find();
             $appid = $wechat['appid'];
-            echo($appid);
-            $lenurl = 'http://' . $wechat['weburl'] . '/Home/Index/index1.html';
+            $lenurl = $wechat['serurl'];
             $encurl = urlencode($lenurl);
             $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $appid . '&redirect_uri=' . $encurl . '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
             header("Location:" . $url);

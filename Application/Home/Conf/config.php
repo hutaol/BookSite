@@ -14,5 +14,5 @@ return array(
   //   // '__UPLOAD__'=>__ROOT__.'/Public/Uploads',
 
 	 // 'TMPL_ACTION_ERROR'     =>  MODULE_PATH.'View/Public/error.html', // 默认错误跳转对应的模板文件
-    'CHECK_LOGIN'=>'1',         // 检查登录 0不需要检查
+    'CHECK_LOGIN'=>'0',         // 检查登录 0不需要检查
 );
